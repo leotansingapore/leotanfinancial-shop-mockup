@@ -1,0 +1,850 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shop — Leo Tan Financial</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Roboto+Serif:opsz,wght@8..144,400;8..144,500;8..144,600;8..144,700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ["'Roboto Serif'", "system-ui", "sans-serif"],
+            heading: ["'Plus Jakarta Sans'", "system-ui", "sans-serif"],
+            body: ["Roboto", "system-ui", "sans-serif"],
+          },
+          colors: {
+            navy: { DEFAULT: "#0B3D61", dark: "#082B45" },
+            orange: { DEFAULT: "#F68A1E", dark: "#D97408" },
+            cream: "#FEF3E2",
+            ink: "#37393F",
+            mute: "#54595F",
+            line: "#CFD8DC",
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    body { font-family: Roboto, system-ui, sans-serif; color: #37393F; }
+    h1, h2, h3, .display { font-family: 'Roboto Serif', serif; }
+    .heading { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+    .cover-grad-1 { background: radial-gradient(120% 80% at 30% 20%, #FAA554 0%, #F68A1E 40%, #0B3D61 100%); }
+    .cover-grad-2 { background: radial-gradient(120% 80% at 70% 20%, #1f6fa8 0%, #0B3D61 50%, #082B45 100%); }
+    .cover-grad-3 { background: radial-gradient(120% 80% at 50% 80%, #F68A1E 0%, #d35f0a 40%, #082B45 100%); }
+    .cover-grad-4 { background: radial-gradient(120% 80% at 20% 80%, #4ea3d8 0%, #0B3D61 60%, #082B45 100%); }
+    .cover-grad-5 { background: linear-gradient(135deg, #FEF3E2 0%, #FAA554 100%); }
+    .cover-grad-6 { background: linear-gradient(135deg, #0B3D61 0%, #F68A1E 100%); }
+    .cover-grad-7 { background: linear-gradient(135deg, #082B45 0%, #1f6fa8 100%); }
+    .grain { background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 3px 3px; }
+    [data-cat-hidden="true"] { display: none; }
+    details > summary { list-style: none; cursor: pointer; }
+    details > summary::-webkit-details-marker { display: none; }
+    details[open] .chev { transform: rotate(180deg); }
+    .chev { transition: transform 0.2s; }
+
+    /* === Investing in SG eBook mockup === */
+    .bk-cover {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: #ffffff;
+      overflow: hidden;
+      container-type: inline-size;
+    }
+    .bk-cover .dots {
+      position: absolute;
+      background-image: radial-gradient(circle, #0B3D61 0.9px, transparent 0.9px);
+      background-size: 5cqw 5cqw;
+    }
+    .bk-cover .dots-tr { top: 6%; right: 5%; width: 24%; height: 14%; opacity: 0.55; }
+    .bk-cover .dots-bl { bottom: 5%; left: 5%; width: 18%; height: 10%; opacity: 0.6;
+      background-image: radial-gradient(circle, #F68A1E 0.9px, transparent 0.9px); }
+    .bk-cover .eyebrow { position: absolute; top: 8%; left: 7%; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 4.5cqw; color: #1a1f2e; font-weight: 500; letter-spacing: 0.01em; line-height: 1; }
+    .bk-cover .title-stack { position: absolute; top: 17%; left: 7%; line-height: 0.92; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; }
+    .bk-cover .title-stack span { display: block; }
+    .bk-cover .t-orange { color: #F68A1E; font-size: 16cqw; letter-spacing: -0.02em; }
+    .bk-cover .t-navy { color: #0B3D61; font-size: 16cqw; letter-spacing: -0.02em; }
+    .bk-cover .t-mid { color: #F68A1E; font-size: 9cqw; letter-spacing: -0.01em; line-height: 0.95; }
+    .bk-cover .author { position: absolute; left: 7%; top: 56%; display: flex; gap: 1em; align-items: stretch; }
+    .bk-cover .author .bar { width: 2px; background: #0B3D61; }
+    .bk-cover .author .meta { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 4.2cqw; color: #1a1f2e; line-height: 1.4; font-weight: 500; }
+    .bk-cover .author .meta b { color: #0B3D61; font-size: 5.2cqw; letter-spacing: 0.04em; font-weight: 700; }
+    .bk-cover .author .meta .by { color: #F68A1E; font-weight: 700; letter-spacing: 0.06em; }
+    .bk-cover .hex-photo {
+      position: absolute;
+      right: -3%;
+      bottom: 0;
+      width: 68%;
+      aspect-ratio: 0.85/1;
+      clip-path: polygon(18% 0%, 100% 0%, 100% 78%, 82% 100%, 0% 100%, 0% 22%);
+    }
+    .bk-cover .hex-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 28%; }
+    .bk-cover .hex-photo::after {
+      content: ''; position: absolute; inset: 0;
+      box-shadow: inset 0 0 0 2px #F68A1E;
+      clip-path: polygon(18% 0%, 100% 0%, 100% 78%, 82% 100%, 0% 100%, 0% 22%);
+      opacity: 0.85;
+      pointer-events: none;
+    }
+    .bk-cover .diamond-tr {
+      position: absolute; top: 4%; right: 6%;
+      width: 8cqw; height: 8cqw;
+      background: #F68A1E;
+      transform: rotate(45deg);
+      opacity: 0.95;
+    }
+
+    /* 3D mockup wrapper — primary book at angle with spine + secondary flat copy behind */
+    .bk-mockup {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1/1.05;
+      display: block;
+    }
+    .bk-primary {
+      position: absolute;
+      left: 4%;
+      top: 8%;
+      width: 56%;
+      aspect-ratio: 3/4;
+      transform-style: preserve-3d;
+      transform: perspective(1600px) rotateY(-14deg);
+      transform-origin: right center;
+      filter: drop-shadow(10px 18px 22px rgba(11,61,97,0.28)) drop-shadow(2px 4px 6px rgba(0,0,0,0.12));
+      display: flex;
+      z-index: 10;
+    }
+    .bk-primary .bk-spine {
+      width: 18px;
+      background: linear-gradient(90deg, #b9c2cc 0%, #dde2e8 60%, #f1f3f6 100%);
+      position: relative;
+      flex-shrink: 0;
+      border-right: 1px solid #cdd3da;
+    }
+    .bk-primary .bk-spine::after {
+      content: 'THE ULTIMATE GUIDE TO INVESTING IN SINGAPORE';
+      position: absolute;
+      left: 50%; top: 50%;
+      transform: translate(-50%, -50%) rotate(-90deg);
+      white-space: nowrap;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 7px;
+      color: #0B3D61;
+      letter-spacing: 0.18em;
+    }
+    .bk-primary .bk-cover-wrap { flex: 1; position: relative; }
+    .bk-secondary {
+      position: absolute;
+      right: 0;
+      top: 14%;
+      width: 50%;
+      aspect-ratio: 3/4;
+      filter: drop-shadow(8px 14px 18px rgba(11,61,97,0.18)) drop-shadow(1px 3px 5px rgba(0,0,0,0.08));
+      z-index: 5;
+    }
+    .bk-mockup .bk-floor {
+      position: absolute;
+      left: 8%; right: 4%; bottom: -1%;
+      height: 14%;
+      background: radial-gradient(ellipse at center top, rgba(11,61,97,0.22) 0%, rgba(11,61,97,0) 70%);
+      filter: blur(6px);
+      z-index: 1;
+    }
+  </style>
+</head>
+<body class="bg-white">
+
+  <!-- TOP BAR (mock site nav so the page sits in context) -->
+  <header class="border-b border-line/60 bg-white/80 backdrop-blur sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+      <a href="#" class="heading font-bold text-navy text-lg tracking-tight">leotanfinancial.sg</a>
+      <nav class="hidden md:flex items-center gap-7 text-sm heading text-ink/80">
+        <a href="#" class="hover:text-navy">About</a>
+        <a href="#" class="hover:text-navy">Webinars</a>
+        <a href="#" class="hover:text-navy">Blog</a>
+        <a href="#" class="text-navy font-semibold">Shop</a>
+        <a href="#" class="hover:text-navy">Contact</a>
+      </nav>
+      <a href="#" class="heading text-sm font-semibold bg-navy text-white px-4 py-2 rounded-md hover:bg-navy-dark">Free guide</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden border-b border-line/60">
+    <div class="absolute inset-0 -z-0 cover-grad-6 opacity-[0.04]"></div>
+    <div class="max-w-6xl mx-auto px-5 py-16 md:py-24 relative">
+      <div class="inline-flex items-center gap-2 text-xs heading font-semibold uppercase tracking-wider text-orange-dark bg-cream border border-orange/20 px-3 py-1 rounded-full">
+        <span class="w-1.5 h-1.5 rounded-full bg-orange"></span>
+        Shop
+      </div>
+      <h1 class="display text-4xl md:text-6xl font-bold text-navy mt-5 leading-tight max-w-3xl">
+        Tools, books, and sessions to take control of your money.
+      </h1>
+      <p class="mt-5 text-lg text-mute max-w-2xl">
+        Practical resources from a Singapore financial consultant. Instant download. Pay once, keep forever.
+      </p>
+      <div class="mt-7 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-mute heading">
+        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> Instant download</span>
+        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> PayNow + card</span>
+        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> 14-day refund</span>
+        <span class="flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> Lifetime updates</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTER TABS -->
+  <section class="sticky top-16 bg-white/90 backdrop-blur z-30 border-b border-line/60">
+    <div class="max-w-6xl mx-auto px-5 py-3 flex items-center justify-between gap-4 flex-wrap">
+      <div class="flex items-center gap-1 p-1 bg-cream/60 rounded-lg" role="tablist">
+        <button data-filter="all" class="filter-btn heading text-sm font-semibold px-4 py-2 rounded-md bg-white text-navy shadow-sm">All <span class="text-mute font-normal">12</span></button>
+        <button data-filter="ebook" class="filter-btn heading text-sm font-medium px-4 py-2 rounded-md text-mute hover:text-navy">eBooks <span class="text-mute/60 font-normal">6</span></button>
+        <button data-filter="app" class="filter-btn heading text-sm font-medium px-4 py-2 rounded-md text-mute hover:text-navy">Apps <span class="text-mute/60 font-normal">4</span></button>
+        <button data-filter="session" class="filter-btn heading text-sm font-medium px-4 py-2 rounded-md text-mute hover:text-navy">Sessions <span class="text-mute/60 font-normal">1</span></button>
+        <button data-filter="bundle" class="filter-btn heading text-sm font-medium px-4 py-2 rounded-md text-mute hover:text-navy">Bundles <span class="text-mute/60 font-normal">1</span></button>
+      </div>
+      <div class="flex items-center gap-2 text-sm text-mute heading">
+        <label for="sort" class="hidden md:block">Sort</label>
+        <select id="sort" class="bg-white border border-line rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-orange/40">
+          <option>Featured</option>
+          <option>Price: low to high</option>
+          <option>Price: high to low</option>
+          <option>Newest</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUNDLE BANNER -->
+  <section class="max-w-6xl mx-auto px-5 mt-10" data-category="bundle">
+    <div class="relative overflow-hidden rounded-2xl bg-navy text-white p-6 md:p-9">
+      <div class="absolute inset-0 cover-grad-3 opacity-30"></div>
+      <div class="absolute inset-0 grain opacity-30"></div>
+      <div class="relative flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div class="max-w-xl">
+          <div class="inline-flex items-center gap-2 text-[11px] heading font-bold uppercase tracking-wider bg-orange text-white px-2.5 py-1 rounded">
+            Save 30%
+          </div>
+          <h2 class="display text-2xl md:text-3xl font-bold mt-3">The Complete eBook Bundle</h2>
+          <p class="mt-2 text-white/80">All six eBooks — Financial Planning, Adulting, Money Management, Wedding Playbook, Retirement, and Investing in Singapore. One download, S$36 cheaper than buying separately.</p>
+        </div>
+        <div class="text-left md:text-right shrink-0">
+          <div class="flex items-end gap-3 md:justify-end">
+            <span class="display text-4xl font-bold">S$89</span>
+            <span class="text-white/60 line-through pb-1">S$125</span>
+          </div>
+          <button class="mt-3 heading font-semibold bg-orange hover:bg-orange-dark text-white px-5 py-3 rounded-md w-full md:w-auto">
+            Add bundle to cart →
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT GRID -->
+  <section class="max-w-6xl mx-auto px-5 py-12">
+    <div id="grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- 1: The Ultimate Guide to Financial Planning (REAL COVER) -->
+      <article data-category="ebook" class="group bg-white border border-line rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-0.5 transition-all">
+        <div class="relative aspect-[4/5] bg-gradient-to-br from-slate-100 to-slate-200 p-6 flex flex-col justify-between overflow-hidden">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <img src="shop-mockup-assets/financial-planning.webp" alt="The Ultimate Guide to Financial Planning" class="max-h-[88%] w-auto drop-shadow-xl" />
+          </div>
+          <div class="relative flex justify-between items-start">
+            <span class="text-[11px] heading font-bold uppercase tracking-wider bg-white/90 backdrop-blur text-navy px-2 py-1 rounded shadow-sm">eBook</span>
+            <span class="text-[11px] heading font-semibold bg-orange text-white px-2 py-1 rounded shadow-sm">Bestseller</span>
+          </div>
+          <div></div>
+        </div>
+        <div class="p-5">
+          <h3 class="display text-lg font-semibold text-navy">The Ultimate Guide to Financial Planning</h3>
+          <p class="text-sm text-mute mt-1.5 leading-relaxed">Ten essential areas of your wealth you didn't learn in school — CPF, insurance, investing, estate, tax.</p>
+          <div class="flex items-center gap-2 mt-3 text-xs text-mute heading">
+            <span class="flex items-center gap-1 text-amber-500">★★★★★</span>
+            <span>4.9 · 312 readers</span>
+          </div>
+          <div class="flex items-center justify-between mt-5">
+            <span class="display text-2xl font-bold text-navy">S$24</span>
+            <button class="heading text-sm font-semibold text-navy border border-navy/20 hover:bg-navy hover:text-white px-4 py-2 rounded-md transition">Buy</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 2: The Ultimate Guide to Adulting (REAL COVER) -->
+      <article data-category="ebook" class="group bg-white border border-line rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-0.5 transition-all">
+        <div class="relative aspect-[4/5] bg-gradient-to-br from-cream to-orange/20 p-6 flex flex-col justify-between overflow-hidden">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <img src="shop-mockup-assets/adulting.png" alt="The Ultimate Guide to Adulting" class="max-h-[92%] w-auto drop-shadow-xl" />
+          </div>
+          <div class="relative flex justify-between items-start">
+            <span class="text-[11px] heading font-bold uppercase tracking-wider bg-white/90 backdrop-blur text-navy px-2 py-1 rounded shadow-sm">eBook</span>
+          </div>
+          <div></div>
+        </div>
+        <div class="p-5">
+          <h3 class="display text-lg font-semibold text-navy">The Ultimate Guide to Adulting</h3>
+          <p class="text-sm text-mute mt-1.5 leading-relaxed">Nine essentials for young adults — budgeting, CPF basics, BTO, the 50/30/10 rule.</p>
+          <div class="flex items-center gap-2 mt-3 text-xs text-mute heading">
+            <span class="flex items-center gap-1 text-amber-500">★★★★★</span>
+            <span>4.8 · 198 readers</span>
+          </div>
+          <div class="flex items-center justify-between mt-5">
+            <span class="display text-2xl font-bold text-navy">S$19</span>
+            <button class="heading text-sm font-semibold text-navy border border-navy/20 hover:bg-navy hover:text-white px-4 py-2 rounded-md transition">Buy</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3: 9 Money Management Rules (real cover) -->
+      <article data-category="ebook" class="group bg-white border border-line rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-0.5 transition-all">
+        <div class="relative aspect-[4/5] bg-gradient-to-br from-slate-100 to-slate-200 p-6 flex flex-col justify-between overflow-hidden">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <img src="shop-mockup-assets/money-management.webp" alt="9 Money Management Rules You Should Know" class="max-h-[92%] w-auto drop-shadow-xl rounded-sm" />
+          </div>
+          <div class="relative flex justify-between items-start">
+            <span class="text-[11px] heading font-bold uppercase tracking-wider bg-white/90 backdrop-blur text-navy px-2 py-1 rounded shadow-sm">eBook</span>
+          </div>
+          <div></div>
+        </div>
+        <div class="p-5">
+          <h3 class="display text-lg font-semibold text-navy">9 Money Management Rules</h3>
+          <p class="text-sm text-mute mt-1.5 leading-relaxed">Nine non-negotiable habits that separate people who build wealth from those who don't. Short read, big shift.</p>
+          <div class="flex items-center gap-2 mt-3 text-xs text-mute heading">
+            <span class="flex items-center gap-1 text-amber-500">★★★★★</span>
+            <span>4.8 · 224 readers</span>
+          </div>
+          <div class="flex items-center justify-between mt-5">
+            <span class="display text-2xl font-bold text-navy">S$15</span>
+            <button class="heading text-sm font-semibold text-navy border border-navy/20 hover:bg-navy hover:text-white px-4 py-2 rounded-md transition">Buy</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 4: The Wedding Playbook (real cover) -->
+      <article data-category="ebook" class="group bg-white border border-line rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-0.5 transition-all">
+        <div class="relative aspect-[4/5] bg-gradient-to-br from-slate-50 to-slate-100 p-6 flex flex-col justify-between overflow-hidden">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <img src="shop-mockup-assets/wedding-playbook.webp" alt="The Wedding Playbook" class="max-h-[92%] w-auto drop-shadow-xl rounded-sm" />
+          </div>
+          <div class="relative flex justify-between items-start">
+            <span class="text-[11px] heading font-bold uppercase tracking-wider bg-white/90 backdrop-blur text-navy px-2 py-1 rounded shadow-sm">eBook</span>
+            <span class="text-[11px] heading font-semibold bg-orange text-white px-2 py-1 rounded shadow-sm">Popular</span>
+          </div>
+          <div></div>
+        </div>
+        <div class="p-5">
+          <h3 class="display text-lg font-semibold text-navy">The Wedding Playbook</h3>
+          <p class="text-sm text-mute mt-1.5 leading-relaxed">Plan a Singapore wedding without blowing up your finances — venue, AD package, joint accounts, post-wedding savings runway.</p>
+          <div class="flex items-center gap-2 mt-3 text-xs text-mute heading">
+            <span class="flex items-center gap-1 text-amber-500">★★★★★</span>
+            <span>5.0 · 88 readers</span>
+          </div>
+          <div class="flex items-center justify-between mt-5">
+            <span class="display text-2xl font-bold text-navy">S$24</span>
+            <button class="heading text-sm font-semibold text-navy border border-navy/20 hover:bg-navy hover:text-white px-4 py-2 rounded-md transition">Buy</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 5: Are You Truly Ready for Retirement? (real cover) -->
+      <article data-category="ebook" class="group bg-white border border-line rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-0.5 transition-all">
+        <div class="relative aspect-[4/5] bg-gradient-to-br from-cream to-amber-100/40 p-6 flex flex-col justify-between overflow-hidden">
+          <div class="absolute inset-0 flex items-center justify-center">
+            <img src="shop-mockup-assets/retirement.webp" alt="Are You Truly Ready for Retirement?" class="max-h-[92%] w-auto drop-shadow-xl rounded-sm" />
+          </div>
+          <div class="relative flex justify-between items-start">
+            <span class="text-[11px] heading font-bold uppercase tracking-wider bg-white/90 backdrop-blur text-navy px-2 py-1 rounded shadow-sm">eBook</span>
+            <span class="text-[11px] heading font-semibold bg-emerald-500 text-white px-2 py-1 rounded shadow-sm">New</span>
+          </div>
+          <div></div>
+        </div>
+        <div class="p-5">
+          <h3 class="display text-lg font-semibold text-navy">Are You Truly Ready for Retirement?</h3>
+          <p class="text-sm text-mute mt-1.5 leading-relaxed">The overlooked realities that could leave you struggling in your golden years — CPF Life gaps, healthcare costs, withdrawal sequencing.</p>
+          <div class="flex items-center gap-2 mt-3 text-xs text-mute heading">
+            <span class="flex items-center gap-1 text-amber-500">★★★★★</span>
+            <span>5.0 · 53 readers</span>
+          </div>
+          <div class="flex items-center justify-between mt-5">
+            <span class="display text-2xl font-bold text-navy">S$24</span>
+            <button class="heading text-sm font-semibold text-navy border border-navy/20 hover:bg-navy hover:text-white px-4 py-2 rounded-md transition">Buy</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6: The Ultimate Guide to Investing in Singapore (3D book mockup) -->
+      <article data-category="ebook" class="group bg-white border border-line rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-0.5 transition-all">
+        <div class="relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-slate-50 to-slate-200 px-3 pt-3 pb-2 flex items-center justify-center">
+          <!-- ebook + new badges -->
+          <span class="absolute top-3 left-3 z-30 text-[11px] heading font-bold uppercase tracking-wider bg-white/95 backdrop-blur text-navy px-2 py-1 rounded shadow-sm">eBook</span>
+          <span class="absolute top-3 right-3 z-30 text-[11px] heading font-semibold bg-emerald-500 text-white px-2 py-1 rounded shadow-sm">New</span>
+
+          <!-- 3D book mockup -->
+          <div class="bk-mockup">
+            <div class="bk-floor"></div>
+
+            <!-- secondary flat copy behind -->
+            <div class="bk-secondary">
+              <div class="bk-cover">
+                <div class="diamond-tr"></div>
+                <div class="dots dots-tr"></div>
+                <div class="dots dots-bl"></div>
+                <p class="eyebrow">The ultimate guide.</p>
+                <div class="title-stack">
+                  <span class="t-orange">INVESTING</span>
+                  <span class="t-mid">IN</span>
+                  <span class="t-navy">SINGAPORE</span>
+                </div>
+                <div class="author">
+                  <span class="bar"></span>
+                  <span class="meta"><span class="by">BY</span><br/><b>LEO TAN, CFP</b></span>
+                </div>
+                <div class="hex-photo">
+                  <img src="shop-mockup-assets/leo-headshot.webp" alt="Leo Tan" />
+                </div>
+              </div>
+            </div>
+
+            <!-- primary book at angle with spine -->
+            <div class="bk-primary">
+              <div class="bk-spine"></div>
+              <div class="bk-cover-wrap">
+                <div class="bk-cover">
+                  <div class="dots dots-tr"></div>
+                  <div class="dots dots-bl"></div>
+                  <p class="eyebrow">The ultimate guide.</p>
+                  <div class="title-stack">
+                    <span class="t-orange">INVESTING</span>
+                    <span class="t-orange" style="font-size:1.5vw;">IN</span>
+                    <span class="t-navy">SINGAPORE</span>
+                  </div>
+                  <div class="author">
+                    <span class="bar"></span>
+                    <span class="meta"><span class="by">BY</span><br/><b>LEO TAN, CFP</b></span>
+                  </div>
+                  <div class="hex-photo">
+                    <img src="shop-mockup-assets/leo-headshot.webp" alt="Leo Tan" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-5">
+          <h3 class="display text-lg font-semibold text-navy">The Ultimate Guide to Investing in Singapore</h3>
+          <p class="text-sm text-mute mt-1.5 leading-relaxed">Build your first $100K with ETFs, REITs, and SG-listed stocks. The framework, the mistakes, and the math — without the TikTok noise.</p>
+          <div class="flex items-center gap-2 mt-3 text-xs text-mute heading">
+            <span class="flex items-center gap-1 text-amber-500">★★★★★</span>
+            <span>4.9 · 247 readers</span>
+          </div>
+          <div class="flex items-center justify-between mt-5">
+            <span class="display text-2xl font-bold text-navy">S$19</span>
+            <button class="heading text-sm font-semibold text-navy border border-navy/20 hover:bg-navy hover:text-white px-4 py-2 rounded-md transition">Buy</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 6: Budget Tracker App -->
+      <article data-category="app" class="group bg-white border border-line rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-0.5 transition-all">
+        <div class="relative aspect-[4/5] cover-grad-5 p-6 flex flex-col justify-between">
+          <div class="flex justify-between items-start">
+            <span class="text-[11px] heading font-bold uppercase tracking-wider bg-navy text-white px-2 py-1 rounded">App</span>
+            <span class="text-[11px] heading font-semibold bg-orange text-white px-2 py-1 rounded">Excel + Notion</span>
+          </div>
+          <div class="bg-white/95 backdrop-blur rounded-xl p-4 shadow-sm">
+            <div class="flex items-center justify-between text-xs heading text-mute">
+              <span>Net worth</span><span class="text-emerald-600 font-semibold">+12.4%</span>
+            </div>
+            <div class="display text-2xl font-bold text-navy mt-1">S$48,210</div>
+            <div class="grid grid-cols-12 gap-1 mt-3 items-end h-10">
+              <div class="bg-navy/20 rounded-sm" style="height:30%"></div>
+              <div class="bg-navy/30 rounded-sm" style="height:45%"></div>
+              <div class="bg-navy/40 rounded-sm" style="height:55%"></div>
+              <div class="bg-navy/50 rounded-sm" style="height:50%"></div>
+              <div class="bg-navy/60 rounded-sm" style="height:65%"></div>
+              <div class="bg-navy/70 rounded-sm" style="height:70%"></div>
+              <div class="bg-navy/80 rounded-sm" style="height:80%"></div>
+              <div class="bg-navy rounded-sm" style="height:75%"></div>
+              <div class="bg-orange/70 rounded-sm" style="height:85%"></div>
+              <div class="bg-orange rounded-sm" style="height:90%"></div>
+              <div class="bg-orange-dark rounded-sm" style="height:95%"></div>
+              <div class="bg-orange-dark rounded-sm" style="height:100%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="p-5">
+          <h3 class="display text-lg font-semibold text-navy">Budget Tracker</h3>
+          <p class="text-sm text-mute mt-1.5 leading-relaxed">Drop-in templates: income, expenses, sinking funds, net worth. Excel + Notion duplicate.</p>
+          <div class="flex items-center gap-2 mt-3 text-xs text-mute heading">
+            <span class="flex items-center gap-1 text-amber-500">★★★★★</span>
+            <span>4.9 · 274 buyers</span>
+          </div>
+          <div class="flex items-center justify-between mt-5">
+            <span class="display text-2xl font-bold text-navy">S$15</span>
+            <button class="heading text-sm font-semibold text-navy border border-navy/20 hover:bg-navy hover:text-white px-4 py-2 rounded-md transition">Buy</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 7: HDB Mortgage Calculator (paid-unlock app) -->
+      <article data-category="app" class="group bg-white border border-line rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-0.5 transition-all">
+        <div class="relative aspect-[4/5] bg-gradient-to-br from-navy to-navy-dark p-5 flex flex-col justify-between text-white">
+          <div class="flex justify-between items-start">
+            <span class="text-[11px] heading font-bold uppercase tracking-wider bg-white/15 backdrop-blur px-2 py-1 rounded">Web App</span>
+            <span class="text-[11px] heading font-semibold bg-orange px-2 py-1 rounded inline-flex items-center gap-1">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+              Pay to unlock
+            </span>
+          </div>
+          <div class="bg-white/95 backdrop-blur rounded-xl p-4 shadow-lg text-ink">
+            <div class="flex items-center justify-between text-[10px] heading uppercase tracking-wider text-mute">
+              <span>HDB Mortgage</span>
+              <span class="text-emerald-600">Eligible</span>
+            </div>
+            <div class="mt-3">
+              <div class="text-[10px] heading text-mute">Loan amount</div>
+              <div class="display text-xl font-bold text-navy">S$420,000</div>
+              <div class="h-1.5 bg-line rounded-full mt-2 overflow-hidden">
+                <div class="h-full w-[70%] bg-orange rounded-full"></div>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-2 mt-3">
+              <div class="bg-cream/60 rounded-md p-2">
+                <div class="text-[9px] heading text-mute uppercase">Monthly</div>
+                <div class="display text-sm font-bold text-navy">S$1,847</div>
+              </div>
+              <div class="bg-cream/60 rounded-md p-2">
+                <div class="text-[9px] heading text-mute uppercase">Tenure</div>
+                <div class="display text-sm font-bold text-navy">25 yrs</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-5">
+          <h3 class="display text-lg font-semibold text-navy">HDB Mortgage Calculator</h3>
+          <p class="text-sm text-mute mt-1.5 leading-relaxed">Loan eligibility, monthly repayment, and total interest — runs every HDB and bank loan scenario in seconds.</p>
+          <div class="flex items-center gap-2 mt-3 text-xs text-mute heading">
+            <span class="flex items-center gap-1 text-amber-500">★★★★★</span>
+            <span>4.9 · 412 unlocks</span>
+          </div>
+          <div class="flex items-center justify-between mt-5">
+            <span class="display text-2xl font-bold text-navy">S$12</span>
+            <button class="heading text-sm font-semibold bg-navy hover:bg-navy-dark text-white px-4 py-2 rounded-md transition inline-flex items-center gap-1.5">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+              Unlock
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 8: CPF Life Estimator (paid-unlock app) -->
+      <article data-category="app" class="group bg-white border border-line rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-0.5 transition-all">
+        <div class="relative aspect-[4/5] bg-gradient-to-br from-navy via-navy to-orange-dark p-5 flex flex-col justify-between text-white">
+          <div class="flex justify-between items-start">
+            <span class="text-[11px] heading font-bold uppercase tracking-wider bg-white/15 backdrop-blur px-2 py-1 rounded">Web App</span>
+            <span class="text-[11px] heading font-semibold bg-orange px-2 py-1 rounded inline-flex items-center gap-1">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+              Pay to unlock
+            </span>
+          </div>
+          <div class="bg-white/95 backdrop-blur rounded-xl p-4 shadow-lg text-ink">
+            <div class="flex items-center justify-between text-[10px] heading uppercase tracking-wider text-mute">
+              <span>CPF Life · age 65</span>
+              <span class="text-emerald-600">Standard plan</span>
+            </div>
+            <div class="mt-3">
+              <div class="text-[10px] heading text-mute">Estimated monthly payout</div>
+              <div class="display text-xl font-bold text-navy">S$1,720<span class="text-sm font-medium text-mute">/mo</span></div>
+            </div>
+            <div class="mt-3 flex items-end gap-1 h-10">
+              <div class="flex-1 bg-navy/20 rounded-t" style="height:35%"></div>
+              <div class="flex-1 bg-navy/40 rounded-t" style="height:55%"></div>
+              <div class="flex-1 bg-navy/60 rounded-t" style="height:70%"></div>
+              <div class="flex-1 bg-navy rounded-t" style="height:85%"></div>
+              <div class="flex-1 bg-orange rounded-t" style="height:100%"></div>
+            </div>
+            <div class="flex justify-between text-[9px] heading text-mute mt-1">
+              <span>Basic</span><span>Standard</span><span>Escalating</span>
+            </div>
+          </div>
+        </div>
+        <div class="p-5">
+          <h3 class="display text-lg font-semibold text-navy">CPF Life Estimator</h3>
+          <p class="text-sm text-mute mt-1.5 leading-relaxed">See exactly what your CPF Life payout will be at 65 — Basic, Standard, and Escalating plans, side by side.</p>
+          <div class="flex items-center gap-2 mt-3 text-xs text-mute heading">
+            <span class="flex items-center gap-1 text-amber-500">★★★★★</span>
+            <span>4.9 · 286 unlocks</span>
+          </div>
+          <div class="flex items-center justify-between mt-5">
+            <span class="display text-2xl font-bold text-navy">S$12</span>
+            <button class="heading text-sm font-semibold bg-navy hover:bg-navy-dark text-white px-4 py-2 rounded-md transition inline-flex items-center gap-1.5">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+              Unlock
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 9: PolicyLens (paid-unlock app) -->
+      <article data-category="app" class="group bg-white border border-line rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-0.5 transition-all">
+        <div class="relative aspect-[4/5] bg-gradient-to-br from-slate-900 to-slate-700 p-5 flex flex-col justify-between text-white">
+          <div class="flex justify-between items-start">
+            <span class="text-[11px] heading font-bold uppercase tracking-wider bg-white/15 backdrop-blur px-2 py-1 rounded">AI Tool</span>
+            <span class="text-[11px] heading font-semibold bg-orange px-2 py-1 rounded inline-flex items-center gap-1">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+              Pay to unlock
+            </span>
+          </div>
+          <div class="bg-white/95 backdrop-blur rounded-xl p-4 shadow-lg text-ink">
+            <div class="flex items-center gap-2 text-[10px] heading uppercase tracking-wider text-mute">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              <span>policy.pdf · analysed</span>
+            </div>
+            <div class="display text-base font-bold text-navy mt-1.5 leading-tight">PRUShield Premier</div>
+            <div class="mt-3 space-y-1.5">
+              <div class="flex items-start gap-2 text-[10px] heading">
+                <span class="text-emerald-600 font-bold">✓</span>
+                <span class="text-ink">Hospital A ward covered</span>
+              </div>
+              <div class="flex items-start gap-2 text-[10px] heading">
+                <span class="text-amber-500 font-bold">!</span>
+                <span class="text-ink">Pre-existing exclusion (12mo)</span>
+              </div>
+              <div class="flex items-start gap-2 text-[10px] heading">
+                <span class="text-rose-500 font-bold">✕</span>
+                <span class="text-ink">Mental health excluded</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-5">
+          <h3 class="display text-lg font-semibold text-navy">PolicyLens</h3>
+          <p class="text-sm text-mute mt-1.5 leading-relaxed">Upload any insurance policy PDF — get plain-English coverage gaps, exclusions, and red flags in 30 seconds.</p>
+          <div class="flex items-center gap-2 mt-3 text-xs text-mute heading">
+            <span class="flex items-center gap-1 text-amber-500">★★★★★</span>
+            <span>5.0 · 138 unlocks</span>
+          </div>
+          <div class="flex items-center justify-between mt-5">
+            <span class="display text-2xl font-bold text-navy">S$19</span>
+            <button class="heading text-sm font-semibold bg-navy hover:bg-navy-dark text-white px-4 py-2 rounded-md transition inline-flex items-center gap-1.5">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+              Unlock
+            </button>
+          </div>
+        </div>
+      </article>
+
+      <!-- 10: 1:1 Session — guided walkthrough of Bee Hive Finance Hub -->
+      <article data-category="session" class="group bg-white border border-line rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-0.5 transition-all">
+        <div class="relative aspect-[4/5] cover-grad-7 grain p-5 flex flex-col justify-between text-white">
+          <div class="flex justify-between items-start">
+            <span class="text-[11px] heading font-bold uppercase tracking-wider bg-white/15 backdrop-blur px-2 py-1 rounded">1:1 Session</span>
+            <span class="text-[11px] heading font-semibold bg-orange px-2 py-1 rounded">Limited</span>
+          </div>
+          <!-- mock app dashboard preview -->
+          <div class="bg-white/95 backdrop-blur rounded-xl p-3.5 shadow-lg text-ink">
+            <div class="flex items-center justify-between text-[10px] heading uppercase tracking-wider text-mute">
+              <span>Your financial plan</span>
+              <span class="text-emerald-600">On track</span>
+            </div>
+            <div class="grid grid-cols-3 gap-2 mt-2.5">
+              <div class="bg-cream/60 rounded p-1.5">
+                <div class="text-[8px] heading text-mute uppercase">Net worth</div>
+                <div class="display text-[11px] font-bold text-navy leading-tight">S$182k</div>
+              </div>
+              <div class="bg-cream/60 rounded p-1.5">
+                <div class="text-[8px] heading text-mute uppercase">Cash flow</div>
+                <div class="display text-[11px] font-bold text-emerald-600 leading-tight">+S$2.1k</div>
+              </div>
+              <div class="bg-cream/60 rounded p-1.5">
+                <div class="text-[8px] heading text-mute uppercase">CPF age 65</div>
+                <div class="display text-[11px] font-bold text-navy leading-tight">S$1.7k/mo</div>
+              </div>
+            </div>
+            <div class="mt-2.5 flex items-end gap-0.5 h-9">
+              <div class="flex-1 bg-navy/30 rounded-t" style="height:30%"></div>
+              <div class="flex-1 bg-navy/40 rounded-t" style="height:42%"></div>
+              <div class="flex-1 bg-navy/55 rounded-t" style="height:55%"></div>
+              <div class="flex-1 bg-navy/70 rounded-t" style="height:65%"></div>
+              <div class="flex-1 bg-navy rounded-t" style="height:78%"></div>
+              <div class="flex-1 bg-orange/80 rounded-t" style="height:88%"></div>
+              <div class="flex-1 bg-orange rounded-t" style="height:100%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="p-5">
+          <h3 class="display text-lg font-semibold text-navy">1:1 Financial Simulation</h3>
+          <p class="text-sm text-mute mt-1.5 leading-relaxed">60-min Zoom. We plug your real numbers into the Bee Hive Finance Hub — cash flow, net worth, CPF Life, HDB affordability, insurance gaps — and walk through your actual roadmap.</p>
+          <div class="flex items-center gap-2 mt-3 text-xs text-mute heading">
+            <span class="flex items-center gap-1 text-amber-500">★★★★★</span>
+            <span>5.0 · 47 sessions</span>
+          </div>
+          <div class="flex items-center justify-between mt-5">
+            <span class="display text-2xl font-bold text-navy">S$80</span>
+            <button class="heading text-sm font-semibold bg-orange hover:bg-orange-dark text-white px-4 py-2 rounded-md transition">Book →</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Bundle -->
+      <article data-category="bundle" class="group bg-navy text-white border border-navy rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-0.5 transition-all">
+        <div class="relative aspect-[4/5] cover-grad-3 grain p-6 flex flex-col justify-between text-white">
+          <div class="flex justify-between items-start">
+            <span class="text-[11px] heading font-bold uppercase tracking-wider bg-white/15 backdrop-blur px-2 py-1 rounded">Bundle</span>
+            <span class="text-[11px] heading font-semibold bg-orange px-2 py-1 rounded">Save 29%</span>
+          </div>
+          <div>
+            <p class="text-xs heading uppercase tracking-widest text-white/80">6 eBooks</p>
+            <h3 class="display text-2xl font-bold leading-tight mt-1">Complete eBook Bundle</h3>
+            <p class="text-xs text-white/80 mt-2">Financial Planning · Adulting · Money Management · Wedding · Retirement · Investing</p>
+          </div>
+        </div>
+        <div class="p-5">
+          <h3 class="display text-lg font-semibold">Complete eBook Bundle</h3>
+          <p class="text-sm text-white/70 mt-1.5 leading-relaxed">All six eBooks. One download. S$36 cheaper than buying separately.</p>
+          <div class="flex items-center justify-between mt-5">
+            <div>
+              <span class="display text-2xl font-bold">S$89</span>
+              <span class="text-white/50 line-through ml-2">S$125</span>
+            </div>
+            <button class="heading text-sm font-semibold bg-orange hover:bg-orange-dark text-white px-4 py-2 rounded-md transition">Buy bundle</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="bg-cream/40 border-y border-line/60">
+    <div class="max-w-6xl mx-auto px-5 py-14">
+      <h2 class="display text-3xl font-bold text-navy text-center">How it works</h2>
+      <div class="grid md:grid-cols-3 gap-6 mt-10">
+        <div class="bg-white border border-line rounded-xl p-6">
+          <div class="w-10 h-10 rounded-lg bg-navy text-white heading font-bold flex items-center justify-center">1</div>
+          <h3 class="heading font-semibold text-navy mt-4">Buy</h3>
+          <p class="text-sm text-mute mt-2 leading-relaxed">Card or PayNow. Checkout takes 30 seconds. No account required.</p>
+        </div>
+        <div class="bg-white border border-line rounded-xl p-6">
+          <div class="w-10 h-10 rounded-lg bg-navy text-white heading font-bold flex items-center justify-center">2</div>
+          <h3 class="heading font-semibold text-navy mt-4">Get the link</h3>
+          <p class="text-sm text-mute mt-2 leading-relaxed">Download link lands in your inbox immediately. Sessions get a Zoom invite + booking link.</p>
+        </div>
+        <div class="bg-white border border-line rounded-xl p-6">
+          <div class="w-10 h-10 rounded-lg bg-navy text-white heading font-bold flex items-center justify-center">3</div>
+          <h3 class="heading font-semibold text-navy mt-4">Keep forever</h3>
+          <p class="text-sm text-mute mt-2 leading-relaxed">eBooks include free updates for life. Re-download anytime from your account.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="max-w-6xl mx-auto px-5 py-16">
+    <div class="flex items-end justify-between flex-wrap gap-3 mb-8">
+      <h2 class="display text-3xl font-bold text-navy">What readers say</h2>
+      <p class="text-sm text-mute heading">Verified buyers · 800+ across all products</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <figure class="bg-white border border-line rounded-2xl p-6">
+        <div class="text-amber-500 text-sm">★★★★★</div>
+        <blockquote class="display text-navy mt-3 leading-relaxed">"Wish I'd read this before signing my first ILP. Saved me from a 30-year mistake."</blockquote>
+        <figcaption class="mt-4 text-xs heading text-mute">— Rachel L., 28 · bought Insurance 101</figcaption>
+      </figure>
+      <figure class="bg-white border border-line rounded-2xl p-6">
+        <div class="text-amber-500 text-sm">★★★★★</div>
+        <blockquote class="display text-navy mt-3 leading-relaxed">"Finally a CPF guide that doesn't put me to sleep. Did SA shielding the same week."</blockquote>
+        <figcaption class="mt-4 text-xs heading text-mute">— Marcus T., 42 · bought CPF Handbook</figcaption>
+      </figure>
+      <figure class="bg-white border border-line rounded-2xl p-6">
+        <div class="text-amber-500 text-sm">★★★★★</div>
+        <blockquote class="display text-navy mt-3 leading-relaxed">"The simulation session gave me clarity my bank's RM never did. Worth every dollar."</blockquote>
+        <figcaption class="mt-4 text-xs heading text-mute">— Priya S., 34 · 1:1 Session</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-cream/40 border-y border-line/60">
+    <div class="max-w-3xl mx-auto px-5 py-16">
+      <h2 class="display text-3xl font-bold text-navy text-center">FAQ</h2>
+      <div class="mt-8 space-y-3">
+        <details class="bg-white border border-line rounded-xl">
+          <summary class="flex items-center justify-between p-5 heading font-semibold text-navy">
+            How do I receive my purchase?
+            <span class="chev">▾</span>
+          </summary>
+          <p class="px-5 pb-5 text-sm text-mute leading-relaxed">Right after checkout, a download link is emailed to you. eBooks arrive as PDF. The Budget Tracker comes as an Excel file plus a Notion duplicate link. Sessions get a Calendly link to pick a time.</p>
+        </details>
+        <details class="bg-white border border-line rounded-xl">
+          <summary class="flex items-center justify-between p-5 heading font-semibold text-navy">
+            Can I pay with PayNow?
+            <span class="chev">▾</span>
+          </summary>
+          <p class="px-5 pb-5 text-sm text-mute leading-relaxed">Yes. Singapore PayNow is supported alongside Visa, Mastercard, and Amex.</p>
+        </details>
+        <details class="bg-white border border-line rounded-xl">
+          <summary class="flex items-center justify-between p-5 heading font-semibold text-navy">
+            What if I'm not happy?
+            <span class="chev">▾</span>
+          </summary>
+          <p class="px-5 pb-5 text-sm text-mute leading-relaxed">14-day no-questions refund on every product. Email me and I'll process it within a day.</p>
+        </details>
+        <details class="bg-white border border-line rounded-xl">
+          <summary class="flex items-center justify-between p-5 heading font-semibold text-navy">
+            Is this financial advice?
+            <span class="chev">▾</span>
+          </summary>
+          <p class="px-5 pb-5 text-sm text-mute leading-relaxed">No. These are educational resources. For licensed advice tailored to your situation, book a 1:1 session or contact me directly.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="max-w-6xl mx-auto px-5 py-16">
+    <div class="bg-navy text-white rounded-2xl p-8 md:p-12 relative overflow-hidden">
+      <div class="absolute inset-0 cover-grad-6 opacity-20"></div>
+      <div class="relative flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div>
+          <h2 class="display text-3xl font-bold">Not ready to buy?</h2>
+          <p class="text-white/80 mt-2 max-w-lg">Grab the free Adulting starter pack — 12 pages, no upsell. See the writing style before you spend a dollar.</p>
+        </div>
+        <a href="#" class="heading font-semibold bg-orange hover:bg-orange-dark text-white px-6 py-3 rounded-md whitespace-nowrap">Get the free pack →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-line/60 py-10 text-center text-sm text-mute heading">
+    leotanfinancial.sg · © 2026 · <a href="#" class="hover:text-navy">Disclaimer</a> · <a href="#" class="hover:text-navy">Privacy</a> · <a href="#" class="hover:text-navy">Terms</a>
+  </footer>
+
+  <script>
+    const buttons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('[data-category]');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const f = btn.dataset.filter;
+        buttons.forEach(b => {
+          b.classList.remove('bg-white', 'text-navy', 'shadow-sm', 'font-semibold');
+          b.classList.add('text-mute', 'font-medium');
+        });
+        btn.classList.add('bg-white', 'text-navy', 'shadow-sm', 'font-semibold');
+        btn.classList.remove('text-mute', 'font-medium');
+        cards.forEach(c => {
+          const match = f === 'all' || c.dataset.category === f;
+          c.dataset.catHidden = match ? 'false' : 'true';
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

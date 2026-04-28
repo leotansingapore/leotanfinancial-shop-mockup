@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cover Mockup — The Ultimate Guide to Investing in Singapore</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Roboto+Serif:opsz,wght@8..144,500;8..144,700;8..144,800;8..144,900&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        fontFamily: {
+          display: ["'Roboto Serif'", "system-ui", "sans-serif"],
+          heading: ["'Plus Jakarta Sans'", "system-ui", "sans-serif"],
+          body: ["Roboto", "system-ui", "sans-serif"],
+        },
+        colors: {
+          navy: { DEFAULT: "#0B3D61", dark: "#082B45" },
+          orange: { DEFAULT: "#F68A1E", dark: "#D97408" },
+          cream: "#FEF3E2",
+          ink: "#37393F",
+          mute: "#54595F",
+          line: "#CFD8DC",
+        },
+      } },
+    };
+  </script>
+  <style>
+    body { font-family: Roboto, system-ui, sans-serif; color: #37393F; background: #f4f6f9; }
+    .display { font-family: 'Roboto Serif', serif; }
+    .heading { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+
+    /* === Cover === */
+    .bk-cover {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: #ffffff;
+      overflow: hidden;
+      container-type: inline-size;
+    }
+    .bk-cover .dots {
+      position: absolute;
+      background-image: radial-gradient(circle, #0B3D61 0.9px, transparent 0.9px);
+      background-size: 5cqw 5cqw;
+    }
+    .bk-cover .dots-tr { top: 6%; right: 5%; width: 24%; height: 14%; opacity: 0.55; }
+    .bk-cover .dots-bl { bottom: 5%; left: 5%; width: 18%; height: 10%; opacity: 0.6;
+      background-image: radial-gradient(circle, #F68A1E 0.9px, transparent 0.9px); }
+    .bk-cover .eyebrow { position: absolute; top: 8%; left: 7%; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 4.5cqw; color: #1a1f2e; font-weight: 500; letter-spacing: 0.01em; line-height: 1; }
+    .bk-cover .title-stack { position: absolute; top: 17%; left: 7%; line-height: 0.92; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; }
+    .bk-cover .title-stack span { display: block; }
+    .bk-cover .t-orange { color: #F68A1E; font-size: 16cqw; letter-spacing: -0.02em; }
+    .bk-cover .t-navy { color: #0B3D61; font-size: 16cqw; letter-spacing: -0.02em; }
+    .bk-cover .t-mid { color: #F68A1E; font-size: 9cqw; letter-spacing: -0.01em; line-height: 0.95; }
+    .bk-cover .author { position: absolute; left: 7%; top: 56%; display: flex; gap: 1em; align-items: stretch; }
+    .bk-cover .author .bar { width: 2px; background: #0B3D61; }
+    .bk-cover .author .meta { font-family: 'Plus Jakarta Sans', sans-serif; font-size: 4.2cqw; color: #1a1f2e; line-height: 1.4; font-weight: 500; }
+    .bk-cover .author .meta b { color: #0B3D61; font-size: 5.2cqw; letter-spacing: 0.04em; font-weight: 700; }
+    .bk-cover .author .meta .by { color: #F68A1E; font-weight: 700; letter-spacing: 0.06em; }
+    .bk-cover .hex-photo {
+      position: absolute;
+      right: -3%;
+      bottom: 0;
+      width: 68%;
+      aspect-ratio: 0.85/1;
+      clip-path: polygon(18% 0%, 100% 0%, 100% 78%, 82% 100%, 0% 100%, 0% 22%);
+    }
+    .bk-cover .hex-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 28%; }
+    .bk-cover .hex-photo::after {
+      content: ''; position: absolute; inset: 0;
+      box-shadow: inset 0 0 0 2px #F68A1E;
+      clip-path: polygon(18% 0%, 100% 0%, 100% 78%, 82% 100%, 0% 100%, 0% 22%);
+      opacity: 0.85;
+      pointer-events: none;
+    }
+    .bk-cover .diamond-tr {
+      position: absolute; top: 4%; right: 6%;
+      width: 8cqw; height: 8cqw;
+      background: #F68A1E;
+      transform: rotate(45deg);
+      opacity: 0.95;
+    }
+
+    /* 3D mockup wrapper */
+    .bk-mockup {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1/1.05;
+      display: block;
+    }
+    .bk-primary {
+      position: absolute;
+      left: 4%;
+      top: 8%;
+      width: 56%;
+      aspect-ratio: 3/4;
+      transform-style: preserve-3d;
+      transform: perspective(1600px) rotateY(-14deg);
+      transform-origin: right center;
+      filter: drop-shadow(10px 18px 22px rgba(11,61,97,0.28)) drop-shadow(2px 4px 6px rgba(0,0,0,0.12));
+      display: flex;
+      z-index: 10;
+    }
+    .bk-primary .bk-spine {
+      width: 18px;
+      background: linear-gradient(90deg, #b9c2cc 0%, #dde2e8 60%, #f1f3f6 100%);
+      position: relative;
+      flex-shrink: 0;
+      border-right: 1px solid #cdd3da;
+    }
+    .bk-primary .bk-spine::after {
+      content: 'THE ULTIMATE GUIDE TO INVESTING IN SINGAPORE';
+      position: absolute;
+      left: 50%; top: 50%;
+      transform: translate(-50%, -50%) rotate(-90deg);
+      white-space: nowrap;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-weight: 700;
+      font-size: 8px;
+      color: #0B3D61;
+      letter-spacing: 0.18em;
+    }
+    .bk-primary .bk-cover-wrap { flex: 1; position: relative; }
+    .bk-secondary {
+      position: absolute;
+      right: 0;
+      top: 14%;
+      width: 50%;
+      aspect-ratio: 3/4;
+      filter: drop-shadow(8px 14px 18px rgba(11,61,97,0.18)) drop-shadow(1px 3px 5px rgba(0,0,0,0.08));
+      z-index: 5;
+    }
+    .bk-mockup .bk-floor {
+      position: absolute;
+      left: 8%; right: 4%; bottom: -1%;
+      height: 14%;
+      background: radial-gradient(ellipse at center top, rgba(11,61,97,0.22) 0%, rgba(11,61,97,0) 70%);
+      filter: blur(6px);
+      z-index: 1;
+    }
+
+    /* Stack variant */
+    .bk-stack-variant { position: relative; }
+    .bk-stack-variant .stack-back {
+      position: absolute; top: 12px; left: 24px; right: -8px; bottom: 0;
+      transform: rotate(-3deg);
+      filter: drop-shadow(6px 10px 16px rgba(11,61,97,0.18));
+    }
+    .bk-stack-variant .stack-mid {
+      position: absolute; top: 8px; left: 8px; right: 8px; bottom: 4px;
+      transform: rotate(-1deg);
+      filter: drop-shadow(5px 9px 14px rgba(11,61,97,0.15));
+    }
+    .bk-stack-variant .stack-front {
+      position: relative;
+      filter: drop-shadow(8px 14px 18px rgba(11,61,97,0.22));
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+
+  <header class="border-b border-line/60 bg-white/90 backdrop-blur sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-5 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <a href="index.html" class="heading text-sm text-mute hover:text-navy">← Back to shop</a>
+        <span class="text-line">|</span>
+        <span class="heading text-sm font-semibold text-navy">eBook cover mockup</span>
+      </div>
+      <span class="heading text-xs text-mute">Front · 3D · Stack</span>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto px-5 py-12 md:py-16">
+
+    <!-- Title -->
+    <div class="text-center mb-12">
+      <p class="heading text-xs font-bold uppercase tracking-[0.2em] text-orange-dark">eBook · Volume 06</p>
+      <h1 class="display text-3xl md:text-5xl font-bold text-navy mt-3">The Ultimate Guide to Investing in Singapore</h1>
+      <p class="text-mute mt-3 max-w-xl mx-auto">By Leo Tan, CFP™ · Same series visual language as Wedding Playbook and Retirement.</p>
+    </div>
+
+    <!-- HERO 3D MOCKUP -->
+    <section class="grid lg:grid-cols-5 gap-10 items-center bg-white rounded-3xl p-8 md:p-12 shadow-sm border border-line">
+      <div class="lg:col-span-3 flex justify-center">
+        <div class="w-full max-w-[600px]">
+          <div class="bk-mockup">
+            <div class="bk-floor"></div>
+
+            <!-- secondary flat copy -->
+            <div class="bk-secondary">
+              <div class="bk-cover">
+                <div class="diamond-tr"></div>
+                <div class="dots dots-tr"></div>
+                <div class="dots dots-bl"></div>
+                <p class="eyebrow">The ultimate guide.</p>
+                <div class="title-stack">
+                  <span class="t-orange">INVESTING</span>
+                  <span class="t-mid">IN</span>
+                  <span class="t-navy">SINGAPORE</span>
+                </div>
+                <div class="author">
+                  <span class="bar"></span>
+                  <span class="meta"><span class="by">BY</span><br/><b>LEO TAN, CFP</b></span>
+                </div>
+                <div class="hex-photo">
+                  <img src="shop-mockup-assets/leo-headshot.webp" alt="Leo Tan" />
+                </div>
+              </div>
+            </div>
+
+            <!-- primary book at angle with spine -->
+            <div class="bk-primary">
+              <div class="bk-spine"></div>
+              <div class="bk-cover-wrap">
+                <div class="bk-cover">
+                  <div class="diamond-tr"></div>
+                  <div class="dots dots-tr"></div>
+                  <div class="dots dots-bl"></div>
+                  <p class="eyebrow">The ultimate guide.</p>
+                  <div class="title-stack">
+                    <span class="t-orange">INVESTING</span>
+                    <span class="t-mid">IN</span>
+                    <span class="t-navy">SINGAPORE</span>
+                  </div>
+                  <div class="author">
+                    <span class="bar"></span>
+                    <span class="meta"><span class="by">BY</span><br/><b>LEO TAN, CFP</b></span>
+                  </div>
+                  <div class="hex-photo">
+                    <img src="shop-mockup-assets/leo-headshot.webp" alt="Leo Tan" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-2">
+        <p class="heading text-xs font-bold uppercase tracking-[0.2em] text-orange-dark">3D book mockup</p>
+        <h2 class="display text-2xl font-bold text-navy mt-2">Same look as your existing covers</h2>
+        <p class="text-mute mt-3 leading-relaxed">Two-copy 3D layout with visible spine — same visual language as your Adulting and Financial Planning covers, designed to slot into the shop card cleanly.</p>
+        <ul class="mt-5 space-y-2.5 text-sm text-mute">
+          <li class="flex gap-2"><span class="text-orange">●</span> Clean Leo headshot (no background blobs)</li>
+          <li class="flex gap-2"><span class="text-orange">●</span> Hexagonal photo cutout — matches Wedding Playbook</li>
+          <li class="flex gap-2"><span class="text-orange">●</span> Orange + navy title — matches series palette</li>
+          <li class="flex gap-2"><span class="text-orange">●</span> Dot pattern decorations + diamond accent</li>
+          <li class="flex gap-2"><span class="text-orange">●</span> Same author block format as Wedding Playbook</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- VARIANTS -->
+    <section class="mt-16">
+      <h2 class="display text-2xl font-bold text-navy">Three variant angles</h2>
+      <p class="text-mute mt-1">Pick the one you want for the shop, hero sections, and bundle visuals.</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+
+        <!-- VARIANT 1: Flat -->
+        <div>
+          <div class="bg-white rounded-2xl p-8 flex items-center justify-center min-h-[440px] shadow-sm border border-line">
+            <div class="w-[260px]" style="filter: drop-shadow(6px 12px 18px rgba(11,61,97,0.22));">
+              <div class="bk-cover rounded-sm">
+                <div class="diamond-tr"></div>
+                <div class="dots dots-tr"></div>
+                <div class="dots dots-bl"></div>
+                <p class="eyebrow">The ultimate guide.</p>
+                <div class="title-stack">
+                  <span class="t-orange">INVESTING</span>
+                  <span class="t-mid">IN</span>
+                  <span class="t-navy">SINGAPORE</span>
+                </div>
+                <div class="author">
+                  <span class="bar"></span>
+                  <span class="meta"><span class="by">BY</span><br/><b>LEO TAN, CFP</b></span>
+                </div>
+                <div class="hex-photo">
+                  <img src="shop-mockup-assets/leo-headshot.webp" alt="Leo Tan" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="heading text-sm font-semibold text-navy mt-4">Flat front</p>
+          <p class="heading text-xs text-mute">For PDF page 1 · email · social posts</p>
+        </div>
+
+        <!-- VARIANT 2: 3D mockup (smaller) -->
+        <div>
+          <div class="bg-white rounded-2xl p-8 flex items-center justify-center min-h-[440px] shadow-sm border border-line">
+            <div class="w-full max-w-[320px]">
+              <div class="bk-mockup">
+                <div class="bk-floor"></div>
+                <div class="bk-secondary">
+                  <div class="bk-cover">
+                    <div class="diamond-tr"></div>
+                    <div class="dots dots-tr"></div>
+                    <div class="dots dots-bl"></div>
+                    <p class="eyebrow">The ultimate guide.</p>
+                    <div class="title-stack">
+                      <span class="t-orange">INVESTING</span>
+                      <span class="t-mid">IN</span>
+                      <span class="t-navy">SINGAPORE</span>
+                    </div>
+                    <div class="author">
+                      <span class="bar"></span>
+                      <span class="meta"><span class="by">BY</span><br/><b>LEO TAN, CFP</b></span>
+                    </div>
+                    <div class="hex-photo">
+                      <img src="shop-mockup-assets/leo-headshot.webp" alt="Leo Tan" />
+                    </div>
+                  </div>
+                </div>
+                <div class="bk-primary">
+                  <div class="bk-spine"></div>
+                  <div class="bk-cover-wrap">
+                    <div class="bk-cover">
+                      <div class="diamond-tr"></div>
+                      <div class="dots dots-tr"></div>
+                      <div class="dots dots-bl"></div>
+                      <p class="eyebrow">The ultimate guide.</p>
+                      <div class="title-stack">
+                        <span class="t-orange">INVESTING</span>
+                        <span class="t-mid">IN</span>
+                        <span class="t-navy">SINGAPORE</span>
+                      </div>
+                      <div class="author">
+                        <span class="bar"></span>
+                        <span class="meta"><span class="by">BY</span><br/><b>LEO TAN, CFP</b></span>
+                      </div>
+                      <div class="hex-photo">
+                        <img src="shop-mockup-assets/leo-headshot.webp" alt="Leo Tan" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="heading text-sm font-semibold text-navy mt-4">3D angle (recommended)</p>
+          <p class="heading text-xs text-mute">For shop card · hero · landing pages</p>
+        </div>
+
+        <!-- VARIANT 3: Series stack -->
+        <div>
+          <div class="bg-white rounded-2xl p-8 flex items-center justify-center min-h-[440px] shadow-sm border border-line">
+            <div class="bk-stack-variant w-[230px] aspect-[3/4] relative">
+              <!-- back -->
+              <div class="stack-back bg-navy/70 rounded-sm"></div>
+              <!-- mid -->
+              <div class="stack-mid bg-orange/40 rounded-sm"></div>
+              <!-- front -->
+              <div class="stack-front">
+                <div class="bk-cover rounded-sm">
+                  <div class="diamond-tr"></div>
+                  <div class="dots dots-tr"></div>
+                  <div class="dots dots-bl"></div>
+                  <p class="eyebrow">The ultimate guide.</p>
+                  <div class="title-stack">
+                    <span class="t-orange">INVESTING</span>
+                    <span class="t-mid">IN</span>
+                    <span class="t-navy">SINGAPORE</span>
+                  </div>
+                  <div class="author">
+                    <span class="bar"></span>
+                    <span class="meta"><span class="by">BY</span><br/><b>LEO TAN, CFP</b></span>
+                  </div>
+                  <div class="hex-photo">
+                    <img src="shop-mockup-assets/leo-headshot.webp" alt="Leo Tan" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p class="heading text-sm font-semibold text-navy mt-4">Series stack</p>
+          <p class="heading text-xs text-mute">For bundle / collection visuals</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOTES -->
+    <section class="mt-16 max-w-3xl mx-auto bg-cream/40 border border-orange/20 rounded-2xl p-8">
+      <h3 class="display text-xl font-bold text-navy">What I'm guessing — tell me what to change</h3>
+      <ul class="mt-4 space-y-2.5 text-sm text-mute">
+        <li><strong class="text-navy">Title break:</strong> currently "INVESTING / IN / SINGAPORE" three lines, "IN" smaller. Want all three same size, or "INVESTING IN / SINGAPORE" two lines instead?</li>
+        <li><strong class="text-navy">Photo:</strong> using the clean white-bg headshot from <code>about-me/leo-tan-small</code>. Want a different one?</li>
+        <li><strong class="text-navy">Decorative shapes:</strong> currently navy dots top-right, orange dots bottom-left, orange diamond top-right. Add or remove?</li>
+        <li><strong class="text-navy">Subtitle:</strong> none right now. Want to add "Build Your First $100K With Confidence" under the title or under the photo?</li>
+        <li><strong class="text-navy">Author cred:</strong> "BY LEO TAN, CFP" matches Wedding Playbook. Switch to "AFP, AWP" (Money Management cover) or "CFP™" (Financial Planning cover) if you prefer.</li>
+        <li><strong class="text-navy">Render fidelity:</strong> this is HTML/CSS. Final PDF cover would be re-built in Canva/Figma to match — this page is a layout spec the designer can hand off from.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="border-t border-line/60 mt-16 py-10 text-center text-sm text-mute heading">
+    leotanfinancial.sg · cover mockup · April 2026
+  </footer>
+</body>
+</html>
