@@ -202,9 +202,9 @@
   <section class="sticky top-16 bg-white/90 backdrop-blur z-30 border-b border-line/60">
     <div class="max-w-6xl mx-auto px-5 py-3 flex items-center justify-between gap-4 flex-wrap">
       <div class="flex items-center gap-1 p-1 bg-cream/60 rounded-lg" role="tablist">
-        <button data-filter="all" class="filter-btn heading text-sm font-semibold px-4 py-2 rounded-md bg-white text-navy shadow-sm">All <span class="text-mute font-normal">12</span></button>
+        <button data-filter="all" class="filter-btn heading text-sm font-semibold px-4 py-2 rounded-md bg-white text-navy shadow-sm">All <span class="text-mute font-normal">11</span></button>
         <button data-filter="ebook" class="filter-btn heading text-sm font-medium px-4 py-2 rounded-md text-mute hover:text-navy">eBooks <span class="text-mute/60 font-normal">6</span></button>
-        <button data-filter="app" class="filter-btn heading text-sm font-medium px-4 py-2 rounded-md text-mute hover:text-navy">Apps <span class="text-mute/60 font-normal">4</span></button>
+        <button data-filter="app" class="filter-btn heading text-sm font-medium px-4 py-2 rounded-md text-mute hover:text-navy">Apps <span class="text-mute/60 font-normal">3</span></button>
         <button data-filter="session" class="filter-btn heading text-sm font-medium px-4 py-2 rounded-md text-mute hover:text-navy">Sessions <span class="text-mute/60 font-normal">1</span></button>
         <button data-filter="bundle" class="filter-btn heading text-sm font-medium px-4 py-2 rounded-md text-mute hover:text-navy">Bundles <span class="text-mute/60 font-normal">1</span></button>
       </div>
@@ -450,44 +450,81 @@
         </div>
       </article>
 
-      <!-- 6: Budget Tracker App -->
+      <!-- Budget Tracker App (mirrors effortless-spend-sense credit-card UI) -->
       <article data-category="app" class="group bg-white border border-line rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-0.5 transition-all">
-        <div class="relative aspect-[4/5] cover-grad-5 p-6 flex flex-col justify-between">
+        <div class="relative aspect-[4/5] bg-gradient-to-br from-slate-100 via-slate-50 to-slate-100 p-5 flex flex-col justify-between">
           <div class="flex justify-between items-start">
-            <span class="text-[11px] heading font-bold uppercase tracking-wider bg-navy text-white px-2 py-1 rounded">App</span>
-            <span class="text-[11px] heading font-semibold bg-orange text-white px-2 py-1 rounded">Excel + Notion</span>
+            <span class="text-[11px] heading font-bold uppercase tracking-wider bg-slate-900 text-white px-2 py-1 rounded">Web App</span>
+            <span class="text-[11px] heading font-semibold bg-orange text-white px-2 py-1 rounded inline-flex items-center gap-1">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+              Pay to unlock
+            </span>
           </div>
-          <div class="bg-white/95 backdrop-blur rounded-xl p-4 shadow-sm">
-            <div class="flex items-center justify-between text-xs heading text-mute">
-              <span>Net worth</span><span class="text-emerald-600 font-semibold">+12.4%</span>
+          <!-- credit-card style balance card -->
+          <div class="relative rounded-xl p-3.5 text-white overflow-hidden aspect-[2/1.05] shadow-2xl shadow-slate-900/40" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);">
+            <!-- subtle blobs -->
+            <div class="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-full blur-2xl"></div>
+            <div class="absolute bottom-0 left-0 w-20 h-20 bg-white/5 rounded-full blur-2xl"></div>
+            <div class="relative h-full flex flex-col justify-between">
+              <div class="flex items-start justify-between">
+                <!-- EMV chip + account name -->
+                <div class="flex flex-col gap-1">
+                  <div class="h-5 w-7 rounded-sm bg-gradient-to-br from-amber-200 via-amber-300 to-amber-500 shadow grid grid-cols-3 grid-rows-3 gap-px p-0.5">
+                    <div class="bg-amber-700/30 rounded-[1px]"></div><div class="bg-amber-700/30 rounded-[1px]"></div><div class="bg-amber-700/30 rounded-[1px]"></div>
+                    <div class="bg-amber-700/30 rounded-[1px]"></div><div class="bg-amber-700/30 rounded-[1px]"></div><div class="bg-amber-700/30 rounded-[1px]"></div>
+                    <div class="bg-amber-700/30 rounded-[1px]"></div><div class="bg-amber-700/30 rounded-[1px]"></div><div class="bg-amber-700/30 rounded-[1px]"></div>
+                  </div>
+                  <p class="text-[7px] heading uppercase tracking-wider text-white/60 font-medium">All Accounts</p>
+                </div>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-white/70"><path d="M18 10L21 7M21 7L18 4M21 7H7M6 14L3 17M3 17L6 20M3 17H17" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="flex items-end justify-between">
+                <div>
+                  <p class="text-[8px] heading uppercase tracking-widest text-white/60 font-medium">Total Balance</p>
+                  <p class="display text-2xl font-bold tracking-tight leading-none mt-0.5">$48,210</p>
+                </div>
+                <div class="text-right">
+                  <p class="text-[7px] heading uppercase tracking-wide text-white/50">Cardholder</p>
+                  <p class="text-[10px] heading font-medium tracking-wide">Leo Tan</p>
+                </div>
+              </div>
             </div>
-            <div class="display text-2xl font-bold text-navy mt-1">S$48,210</div>
-            <div class="grid grid-cols-12 gap-1 mt-3 items-end h-10">
-              <div class="bg-navy/20 rounded-sm" style="height:30%"></div>
-              <div class="bg-navy/30 rounded-sm" style="height:45%"></div>
-              <div class="bg-navy/40 rounded-sm" style="height:55%"></div>
-              <div class="bg-navy/50 rounded-sm" style="height:50%"></div>
-              <div class="bg-navy/60 rounded-sm" style="height:65%"></div>
-              <div class="bg-navy/70 rounded-sm" style="height:70%"></div>
-              <div class="bg-navy/80 rounded-sm" style="height:80%"></div>
-              <div class="bg-navy rounded-sm" style="height:75%"></div>
-              <div class="bg-orange/70 rounded-sm" style="height:85%"></div>
-              <div class="bg-orange rounded-sm" style="height:90%"></div>
-              <div class="bg-orange-dark rounded-sm" style="height:95%"></div>
-              <div class="bg-orange-dark rounded-sm" style="height:100%"></div>
+          </div>
+          <!-- Income / Expenses pills -->
+          <div class="grid grid-cols-2 gap-2">
+            <div class="bg-emerald-50 border border-emerald-200/60 rounded-lg p-2.5">
+              <div class="flex items-center gap-1.5 text-[9px] heading text-mute uppercase tracking-wider">
+                <span class="w-4 h-4 rounded-full bg-emerald-100 flex items-center justify-center">
+                  <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3"><path d="M7 17l9.2-9.2M17 17V7H7" stroke-linecap="round"/></svg>
+                </span>
+                Income
+              </div>
+              <div class="display text-sm font-bold text-emerald-700 mt-1">$8,420</div>
+            </div>
+            <div class="bg-rose-50 border border-rose-200/60 rounded-lg p-2.5">
+              <div class="flex items-center gap-1.5 text-[9px] heading text-mute uppercase tracking-wider">
+                <span class="w-4 h-4 rounded-full bg-rose-100 flex items-center justify-center">
+                  <svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="#e11d48" stroke-width="3"><path d="M17 7l-9.2 9.2M17 7v10H7" stroke-linecap="round"/></svg>
+                </span>
+                Expenses
+              </div>
+              <div class="display text-sm font-bold text-rose-700 mt-1">$3,184</div>
             </div>
           </div>
         </div>
         <div class="p-5">
           <h3 class="display text-lg font-semibold text-navy">Budget Tracker</h3>
-          <p class="text-sm text-mute mt-1.5 leading-relaxed">Drop-in templates: income, expenses, sinking funds, net worth. Excel + Notion duplicate.</p>
+          <p class="text-sm text-mute mt-1.5 leading-relaxed">Mobile-first expense tracker with smart receipt scanning, recurring transactions, sub-accounts, and category budgets.</p>
           <div class="flex items-center gap-2 mt-3 text-xs text-mute heading">
             <span class="flex items-center gap-1 text-amber-500">★★★★★</span>
-            <span>4.9 · 274 buyers</span>
+            <span>4.9 · 274 unlocks</span>
           </div>
           <div class="flex items-center justify-between mt-5">
             <span class="display text-2xl font-bold text-navy">S$15</span>
-            <button class="heading text-sm font-semibold text-navy border border-navy/20 hover:bg-navy hover:text-white px-4 py-2 rounded-md transition">Buy</button>
+            <button class="heading text-sm font-semibold bg-navy hover:bg-navy-dark text-white px-4 py-2 rounded-md transition inline-flex items-center gap-1.5">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+              Unlock
+            </button>
           </div>
         </div>
       </article>
@@ -543,81 +580,73 @@
         </div>
       </article>
 
-      <!-- 8: CPF Life Estimator (paid-unlock app) -->
+      <!-- PolicyLens (paid-unlock AI tool) -->
       <article data-category="app" class="group bg-white border border-line rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-0.5 transition-all">
-        <div class="relative aspect-[4/5] bg-gradient-to-br from-navy via-navy to-orange-dark p-5 flex flex-col justify-between text-white">
-          <div class="flex justify-between items-start">
-            <span class="text-[11px] heading font-bold uppercase tracking-wider bg-white/15 backdrop-blur px-2 py-1 rounded">Web App</span>
-            <span class="text-[11px] heading font-semibold bg-orange px-2 py-1 rounded inline-flex items-center gap-1">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-              Pay to unlock
-            </span>
-          </div>
-          <div class="bg-white/95 backdrop-blur rounded-xl p-4 shadow-lg text-ink">
-            <div class="flex items-center justify-between text-[10px] heading uppercase tracking-wider text-mute">
-              <span>CPF Life · age 65</span>
-              <span class="text-emerald-600">Standard plan</span>
-            </div>
-            <div class="mt-3">
-              <div class="text-[10px] heading text-mute">Estimated monthly payout</div>
-              <div class="display text-xl font-bold text-navy">S$1,720<span class="text-sm font-medium text-mute">/mo</span></div>
-            </div>
-            <div class="mt-3 flex items-end gap-1 h-10">
-              <div class="flex-1 bg-navy/20 rounded-t" style="height:35%"></div>
-              <div class="flex-1 bg-navy/40 rounded-t" style="height:55%"></div>
-              <div class="flex-1 bg-navy/60 rounded-t" style="height:70%"></div>
-              <div class="flex-1 bg-navy rounded-t" style="height:85%"></div>
-              <div class="flex-1 bg-orange rounded-t" style="height:100%"></div>
-            </div>
-            <div class="flex justify-between text-[9px] heading text-mute mt-1">
-              <span>Basic</span><span>Standard</span><span>Escalating</span>
-            </div>
-          </div>
-        </div>
-        <div class="p-5">
-          <h3 class="display text-lg font-semibold text-navy">CPF Life Estimator</h3>
-          <p class="text-sm text-mute mt-1.5 leading-relaxed">See exactly what your CPF Life payout will be at 65 — Basic, Standard, and Escalating plans, side by side.</p>
-          <div class="flex items-center gap-2 mt-3 text-xs text-mute heading">
-            <span class="flex items-center gap-1 text-amber-500">★★★★★</span>
-            <span>4.9 · 286 unlocks</span>
-          </div>
-          <div class="flex items-center justify-between mt-5">
-            <span class="display text-2xl font-bold text-navy">S$12</span>
-            <button class="heading text-sm font-semibold bg-navy hover:bg-navy-dark text-white px-4 py-2 rounded-md transition inline-flex items-center gap-1.5">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
-              Unlock
-            </button>
-          </div>
-        </div>
-      </article>
+        <div class="relative aspect-[4/5] p-5 flex flex-col justify-between text-white overflow-hidden" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #312e81 100%);">
+          <!-- soft glow accents -->
+          <div class="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-indigo-500/20 blur-3xl"></div>
+          <div class="absolute -bottom-12 -left-10 w-40 h-40 rounded-full bg-cyan-400/15 blur-3xl"></div>
 
-      <!-- 9: PolicyLens (paid-unlock app) -->
-      <article data-category="app" class="group bg-white border border-line rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-0.5 transition-all">
-        <div class="relative aspect-[4/5] bg-gradient-to-br from-slate-900 to-slate-700 p-5 flex flex-col justify-between text-white">
-          <div class="flex justify-between items-start">
-            <span class="text-[11px] heading font-bold uppercase tracking-wider bg-white/15 backdrop-blur px-2 py-1 rounded">AI Tool</span>
+          <div class="relative flex justify-between items-start">
+            <span class="text-[11px] heading font-bold uppercase tracking-wider bg-white/10 backdrop-blur border border-white/10 px-2 py-1 rounded inline-flex items-center gap-1">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+              AI Tool
+            </span>
             <span class="text-[11px] heading font-semibold bg-orange px-2 py-1 rounded inline-flex items-center gap-1">
               <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
               Pay to unlock
             </span>
           </div>
-          <div class="bg-white/95 backdrop-blur rounded-xl p-4 shadow-lg text-ink">
-            <div class="flex items-center gap-2 text-[10px] heading uppercase tracking-wider text-mute">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-              <span>policy.pdf · analysed</span>
+
+          <div class="relative bg-white/97 backdrop-blur rounded-xl p-3.5 shadow-2xl text-ink">
+            <!-- analysing pill -->
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-1.5 text-[9px] heading uppercase tracking-wider text-emerald-600">
+                <span class="relative flex h-1.5 w-1.5">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+                </span>
+                Policy analysed
+              </div>
+              <span class="text-[8px] heading uppercase tracking-wide text-mute">2.4 MB · 31 pgs</span>
             </div>
-            <div class="display text-base font-bold text-navy mt-1.5 leading-tight">PRUShield Premier</div>
-            <div class="mt-3 space-y-1.5">
-              <div class="flex items-start gap-2 text-[10px] heading">
-                <span class="text-emerald-600 font-bold">✓</span>
-                <span class="text-ink">Hospital A ward covered</span>
+            <!-- policy file pill -->
+            <div class="mt-2 flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-md p-1.5">
+              <span class="w-6 h-7 rounded-sm bg-rose-100 border border-rose-200 flex items-center justify-center shrink-0">
+                <span class="text-[7px] heading font-bold text-rose-600">PDF</span>
+              </span>
+              <div class="flex-1 min-w-0">
+                <div class="display text-[11px] font-semibold text-ink truncate leading-tight">your-policy-document.pdf</div>
+                <div class="text-[8px] heading text-mute mt-0.5">Hospitalisation · Term Life</div>
               </div>
-              <div class="flex items-start gap-2 text-[10px] heading">
-                <span class="text-amber-500 font-bold">!</span>
-                <span class="text-ink">Pre-existing exclusion (12mo)</span>
+            </div>
+            <!-- summary chip -->
+            <div class="mt-2.5 grid grid-cols-3 gap-1.5">
+              <div class="bg-emerald-50 border border-emerald-200/70 rounded-md p-1.5 text-center">
+                <div class="display text-sm font-bold text-emerald-700 leading-none">12</div>
+                <div class="text-[7px] heading uppercase tracking-wide text-mute mt-0.5">Covered</div>
               </div>
-              <div class="flex items-start gap-2 text-[10px] heading">
-                <span class="text-rose-500 font-bold">✕</span>
+              <div class="bg-amber-50 border border-amber-200/70 rounded-md p-1.5 text-center">
+                <div class="display text-sm font-bold text-amber-700 leading-none">4</div>
+                <div class="text-[7px] heading uppercase tracking-wide text-mute mt-0.5">Watch</div>
+              </div>
+              <div class="bg-rose-50 border border-rose-200/70 rounded-md p-1.5 text-center">
+                <div class="display text-sm font-bold text-rose-700 leading-none">3</div>
+                <div class="text-[7px] heading uppercase tracking-wide text-mute mt-0.5">Gaps</div>
+              </div>
+            </div>
+            <!-- findings -->
+            <div class="mt-2.5 space-y-1">
+              <div class="flex items-center gap-1.5 text-[10px] heading">
+                <span class="w-3.5 h-3.5 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold leading-none text-[9px]">✓</span>
+                <span class="text-ink">Hospital ward type covered</span>
+              </div>
+              <div class="flex items-center gap-1.5 text-[10px] heading">
+                <span class="w-3.5 h-3.5 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-bold leading-none text-[9px]">!</span>
+                <span class="text-ink">Pre-existing waiting (12 mo)</span>
+              </div>
+              <div class="flex items-center gap-1.5 text-[10px] heading">
+                <span class="w-3.5 h-3.5 rounded-full bg-rose-100 text-rose-700 flex items-center justify-center font-bold leading-none text-[9px]">✕</span>
                 <span class="text-ink">Mental health excluded</span>
               </div>
             </div>
@@ -625,7 +654,7 @@
         </div>
         <div class="p-5">
           <h3 class="display text-lg font-semibold text-navy">PolicyLens</h3>
-          <p class="text-sm text-mute mt-1.5 leading-relaxed">Upload any insurance policy PDF — get plain-English coverage gaps, exclusions, and red flags in 30 seconds.</p>
+          <p class="text-sm text-mute mt-1.5 leading-relaxed">Upload any insurance policy PDF — get a plain-English breakdown of coverage, exclusions, waiting periods, and red flags in 30 seconds.</p>
           <div class="flex items-center gap-2 mt-3 text-xs text-mute heading">
             <span class="flex items-center gap-1 text-amber-500">★★★★★</span>
             <span>5.0 · 138 unlocks</span>
@@ -640,41 +669,65 @@
         </div>
       </article>
 
-      <!-- 10: 1:1 Session — guided walkthrough of Bee Hive Finance Hub -->
+      <!-- 1:1 Session — guided walkthrough of Bee Hive Finance Hub -->
       <article data-category="session" class="group bg-white border border-line rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-0.5 transition-all">
-        <div class="relative aspect-[4/5] cover-grad-7 grain p-5 flex flex-col justify-between text-white">
-          <div class="flex justify-between items-start">
+        <div class="relative aspect-[4/5] p-5 flex flex-col justify-between text-white" style="background: linear-gradient(135deg, #4F4FE6 0%, #6366F1 50%, #FFD633 130%);">
+          <!-- subtle grid pattern -->
+          <div class="absolute inset-0 opacity-20" style="background-image: linear-gradient(rgba(255,255,255,0.15) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.15) 1px, transparent 1px); background-size: 18px 18px;"></div>
+          <div class="absolute top-10 right-6 w-20 h-20 bg-white/10 rounded-full blur-xl"></div>
+          <div class="absolute bottom-10 left-6 w-24 h-24 bg-yellow-300/20 rounded-full blur-xl"></div>
+
+          <div class="relative flex justify-between items-start">
             <span class="text-[11px] heading font-bold uppercase tracking-wider bg-white/15 backdrop-blur px-2 py-1 rounded">1:1 Session</span>
-            <span class="text-[11px] heading font-semibold bg-orange px-2 py-1 rounded">Limited</span>
+            <span class="text-[11px] heading font-semibold bg-yellow-300 text-slate-900 px-2 py-1 rounded">Limited</span>
           </div>
-          <!-- mock app dashboard preview -->
-          <div class="bg-white/95 backdrop-blur rounded-xl p-3.5 shadow-lg text-ink">
-            <div class="flex items-center justify-between text-[10px] heading uppercase tracking-wider text-mute">
-              <span>Your financial plan</span>
-              <span class="text-emerald-600">On track</span>
+
+          <!-- Bee Hive net worth panel -->
+          <div class="relative bg-white/97 backdrop-blur rounded-xl p-3.5 shadow-2xl text-ink">
+            <div class="flex items-center justify-between pb-2.5 border-b border-slate-200">
+              <div class="flex items-center gap-2">
+                <span class="block w-1 h-4 bg-indigo-600"></span>
+                <span class="text-[10px] heading font-medium text-ink">Net Worth</span>
+              </div>
+              <span class="display text-sm font-bold text-ink">$248,420</span>
             </div>
-            <div class="grid grid-cols-3 gap-2 mt-2.5">
-              <div class="bg-cream/60 rounded p-1.5">
-                <div class="text-[8px] heading text-mute uppercase">Net worth</div>
-                <div class="display text-[11px] font-bold text-navy leading-tight">S$182k</div>
+            <div class="flex items-center gap-3 mt-2.5">
+              <!-- donut chart (svg) -->
+              <svg width="60" height="60" viewBox="0 0 42 42" class="shrink-0">
+                <circle cx="21" cy="21" r="15.915" fill="white" stroke="#34D399" stroke-width="6" stroke-dasharray="32 68" stroke-dashoffset="25" transform="rotate(-90 21 21)"/>
+                <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#EC4899" stroke-width="6" stroke-dasharray="22 78" stroke-dashoffset="-7" transform="rotate(-90 21 21)"/>
+                <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#FBBF24" stroke-width="6" stroke-dasharray="18 82" stroke-dashoffset="-29" transform="rotate(-90 21 21)"/>
+                <circle cx="21" cy="21" r="15.915" fill="transparent" stroke="#E5E7EB" stroke-width="6" stroke-dasharray="28 72" stroke-dashoffset="-47" transform="rotate(-90 21 21)"/>
+              </svg>
+              <!-- legend -->
+              <div class="flex-1 space-y-1 text-[9px] heading">
+                <div class="flex items-center justify-between gap-1.5">
+                  <span class="flex items-center gap-1.5 truncate"><span class="w-2 h-2 rounded-full bg-emerald-400 shrink-0"></span><span class="truncate">CPF — OA</span></span>
+                  <span class="text-mute font-medium">32%</span>
+                </div>
+                <div class="flex items-center justify-between gap-1.5">
+                  <span class="flex items-center gap-1.5 truncate"><span class="w-2 h-2 rounded-full bg-pink-500 shrink-0"></span><span class="truncate">Savings</span></span>
+                  <span class="text-mute font-medium">22%</span>
+                </div>
+                <div class="flex items-center justify-between gap-1.5">
+                  <span class="flex items-center gap-1.5 truncate"><span class="w-2 h-2 rounded-full bg-amber-400 shrink-0"></span><span class="truncate">Medisave</span></span>
+                  <span class="text-mute font-medium">18%</span>
+                </div>
+                <div class="flex items-center justify-between gap-1.5">
+                  <span class="flex items-center gap-1.5 truncate"><span class="w-2 h-2 rounded-full bg-slate-300 shrink-0"></span><span class="truncate">CPF — SA</span></span>
+                  <span class="text-mute font-medium">28%</span>
+                </div>
               </div>
-              <div class="bg-cream/60 rounded p-1.5">
-                <div class="text-[8px] heading text-mute uppercase">Cash flow</div>
-                <div class="display text-[11px] font-bold text-emerald-600 leading-tight">+S$2.1k</div>
+            </div>
+            <div class="mt-2.5 pt-2 border-t border-slate-200 grid grid-cols-2 gap-2">
+              <div class="bg-indigo-50 rounded-md p-1.5 border-l-2 border-indigo-500">
+                <div class="text-[8px] heading text-mute uppercase">Cash Flow</div>
+                <div class="display text-[11px] font-bold text-emerald-600 leading-tight">+$2,140</div>
               </div>
-              <div class="bg-cream/60 rounded p-1.5">
+              <div class="bg-amber-50 rounded-md p-1.5 border-l-2 border-amber-400">
                 <div class="text-[8px] heading text-mute uppercase">CPF age 65</div>
-                <div class="display text-[11px] font-bold text-navy leading-tight">S$1.7k/mo</div>
+                <div class="display text-[11px] font-bold text-ink leading-tight">$1,720/mo</div>
               </div>
-            </div>
-            <div class="mt-2.5 flex items-end gap-0.5 h-9">
-              <div class="flex-1 bg-navy/30 rounded-t" style="height:30%"></div>
-              <div class="flex-1 bg-navy/40 rounded-t" style="height:42%"></div>
-              <div class="flex-1 bg-navy/55 rounded-t" style="height:55%"></div>
-              <div class="flex-1 bg-navy/70 rounded-t" style="height:65%"></div>
-              <div class="flex-1 bg-navy rounded-t" style="height:78%"></div>
-              <div class="flex-1 bg-orange/80 rounded-t" style="height:88%"></div>
-              <div class="flex-1 bg-orange rounded-t" style="height:100%"></div>
             </div>
           </div>
         </div>
