@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PolicyLens — Leo Tan Financial</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Roboto+Serif:opsz,wght@8..144,400;8..144,500;8..144,600;8..144,700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ["'Roboto Serif'", "system-ui", "sans-serif"],
+            heading: ["'Plus Jakarta Sans'", "system-ui", "sans-serif"],
+            body: ["Roboto", "system-ui", "sans-serif"],
+          },
+          colors: {
+            navy: { DEFAULT: "#0B3D61", dark: "#082B45" },
+            orange: { DEFAULT: "#F68A1E", dark: "#D97408" },
+            cream: "#FEF3E2",
+            ink: "#37393F",
+            mute: "#54595F",
+            line: "#CFD8DC",
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    body { font-family: Roboto, system-ui, sans-serif; color: #37393F; }
+    h1, h2, h3, .display { font-family: 'Roboto Serif', serif; }
+    .heading { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+  </style>
+</head>
+<body class="bg-white">
+  <!-- TOP BAR -->
+  <header class="border-b border-line/60 sticky top-0 bg-white/95 backdrop-blur z-40">
+    <div class="max-w-6xl mx-auto px-5 py-3 flex items-center justify-between">
+      <a href="/index.html" class="flex items-center gap-2.5 group">
+        <span class="w-9 h-9 rounded-full bg-navy text-white display font-bold flex items-center justify-center group-hover:bg-orange transition">L</span>
+        <span class="heading font-semibold text-navy">Leo Tan Financial</span>
+      </a>
+      <a href="/index.html" class="heading text-sm text-mute hover:text-navy flex items-center gap-1.5">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to shop
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main class="max-w-6xl mx-auto px-5 py-10">
+    <div class="grid lg:grid-cols-[1.2fr_0.8fr] gap-10 lg:gap-14">
+      <!-- LEFT: image + long-form content -->
+      <div>
+        <div class="bg-cream/40 rounded-2xl overflow-hidden border border-line/60"><img src="/shop-mockup-assets/policy-lens.webp" alt="PolicyLens" class="w-full block" style="aspect-ratio: 16/10; object-fit: cover;" /></div>
+
+        <!-- Description -->
+        <section class="mt-10">
+          <h2 class="display text-2xl font-bold text-navy">Description</h2>
+          <p class="mt-4 text-lg text-ink leading-relaxed">Drop your insurance policy PDF in. Get a plain-English breakdown of what&#x27;s covered, what&#x27;s not, and what&#x27;s questionable.</p>
+        </section>
+
+        <section class="mt-10"><h2 class="display text-2xl font-bold text-navy flex items-center gap-2"><span class="text-orange">✦</span> What's inside</h2><ul class="mt-5 space-y-2.5 text-mute leading-relaxed"><li class="flex gap-3"><span class="text-orange shrink-0 mt-1">→</span><span>Upload any Singapore insurance policy PDF — life, CI, IP, health, term</span></li><li class="flex gap-3"><span class="text-orange shrink-0 mt-1">→</span><span>Plain-English summary of coverage, exclusions, and waiting periods</span></li><li class="flex gap-3"><span class="text-orange shrink-0 mt-1">→</span><span>Premium breakdown with future projection</span></li><li class="flex gap-3"><span class="text-orange shrink-0 mt-1">→</span><span>Red-flag checker — common policy traps</span></li><li class="flex gap-3"><span class="text-orange shrink-0 mt-1">→</span><span>Export the report as PDF to share with your spouse</span></li></ul></section>
+        <section class="mt-10"><h2 class="display text-2xl font-bold text-navy flex items-center gap-2"><span class="text-orange">✦</span> How to use it</h2><ul class="mt-5 space-y-2.5 text-mute leading-relaxed"><li class="flex gap-3"><span class="display text-navy font-bold shrink-0">1.</span><span>Unlock, upload your policy PDF.</span></li><li class="flex gap-3"><span class="display text-navy font-bold shrink-0">2.</span><span>Read the AI summary — usually 60-90 seconds to generate.</span></li><li class="flex gap-3"><span class="display text-navy font-bold shrink-0">3.</span><span>Use the questions list when you call your existing agent.</span></li></ul></section>
+        <section class="mt-10"><h2 class="display text-2xl font-bold text-navy flex items-center gap-2"><span class="text-orange">✦</span> Who this is for</h2><p class="mt-5 text-mute leading-relaxed">You have an insurance policy but you&#x27;ve never actually read it. You want to know what&#x27;s actually in there — without booking another meeting with the agent who sold it to you.</p></section>
+        <section class="mt-10"><h2 class="display text-2xl font-bold text-navy flex items-center gap-2"><span class="text-orange">✦</span> Want to go deeper?</h2><p class="mt-5 text-mute leading-relaxed">The 1:1 Financial Simulation reviews your full insurance portfolio against your needs (not against an agent&#x27;s commission).</p></section>
+
+        <!-- Disclaimer -->
+        <div class="mt-10 bg-cream/60 border-l-4 border-orange rounded-r-xl px-5 py-4 text-sm text-mute leading-relaxed">
+          <span class="text-orange">⚠</span> This is a digital product. For personal use only. No financial advice — for that, book the 1:1 Financial Simulation. Do not resell or redistribute.
+        </div>
+      </div>
+
+      <!-- RIGHT: sticky buy panel -->
+      <aside class="lg:sticky lg:top-24 self-start">
+        <div class="bg-white border border-line rounded-2xl p-6 shadow-sm">
+          <div class="text-[11px] heading uppercase tracking-widest text-orange font-bold">AI Tool</div>
+          <h1 class="display text-3xl font-bold text-navy mt-2 leading-tight">PolicyLens</h1>
+
+          <div class="flex items-center gap-2 mt-4 text-sm text-mute heading">
+            <span class="text-amber-500">★★★★★</span>
+            <span>4.9 · 189 unlocks</span>
+          </div>
+
+          <div class="mt-6 pt-6 border-t border-line/60">
+            <div class="flex items-baseline">
+              <span class="display text-3xl font-bold text-navy">S$25</span>
+              
+            </div>
+            <p class="text-xs text-mute heading mt-1.5">One-time payment. Free updates for life.</p>
+          </div>
+
+          <button class="mt-6 w-full bg-navy hover:bg-navy-dark text-white py-3.5 rounded-lg heading font-semibold text-base transition">Buy now</button>
+          <button class="mt-2.5 w-full bg-white hover:bg-cream/40 border border-line text-navy py-3.5 rounded-lg heading font-semibold text-sm transition">Add to wishlist</button>
+
+          <p class="text-xs text-mute leading-relaxed mt-5">Drop your insurance policy PDF in. Get a plain-English breakdown of what&#x27;s covered, what&#x27;s not, and what&#x27;s questionable.</p>
+
+          <!-- Share -->
+          <div class="mt-6 pt-5 border-t border-line/60 flex items-center justify-between">
+            <span class="text-[11px] heading uppercase tracking-widest text-mute">Share</span>
+            <div class="flex items-center gap-2">
+              <button aria-label="Copy link" class="w-8 h-8 rounded-full border border-line hover:bg-cream/40 flex items-center justify-center text-mute hover:text-navy">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+              </button>
+              <button aria-label="Share on X" class="w-8 h-8 rounded-full border border-line hover:bg-cream/40 flex items-center justify-center text-mute hover:text-navy">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </button>
+              <button aria-label="Share on Facebook" class="w-8 h-8 rounded-full border border-line hover:bg-cream/40 flex items-center justify-center text-mute hover:text-navy">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.89 3.77-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.45 2.91h-2.34V22c4.78-.79 8.45-4.95 8.45-9.94z"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trust strip -->
+        <div class="mt-5 grid grid-cols-3 gap-3 text-center">
+          <div class="bg-cream/40 rounded-lg px-2 py-3">
+            <div class="text-orange display text-xl font-bold">30s</div>
+            <div class="text-[10px] heading uppercase tracking-wider text-mute mt-0.5">checkout</div>
+          </div>
+          <div class="bg-cream/40 rounded-lg px-2 py-3">
+            <div class="text-orange display text-xl font-bold">∞</div>
+            <div class="text-[10px] heading uppercase tracking-wider text-mute mt-0.5">free updates</div>
+          </div>
+          <div class="bg-cream/40 rounded-lg px-2 py-3">
+            <div class="text-orange display text-xl font-bold">7d</div>
+            <div class="text-[10px] heading uppercase tracking-wider text-mute mt-0.5">refund</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <section class="max-w-6xl mx-auto px-5 py-14 border-t border-line/60"><div class="flex items-center justify-between mb-6"><h2 class="display text-2xl font-bold text-navy">Other items in the shop</h2><a href="/index.html" class="heading text-sm font-medium text-mute hover:text-navy">View all →</a></div><div class="grid grid-cols-1 sm:grid-cols-3 gap-5"><a href="financial-planning.html" class="group bg-white border border-line rounded-xl overflow-hidden hover:shadow-md hover:-translate-y-0.5 transition-all"><div class="aspect-[4/5] bg-cream/40 overflow-hidden"><img src="/shop-mockup-assets/financial-planning.webp" alt="" class="w-full h-full object-cover" /></div><div class="p-4"><div class="text-[10px] heading uppercase tracking-widest text-mute">eBook</div><h3 class="display text-base font-semibold text-navy mt-1 leading-tight">The Ultimate Guide to Financial Planning</h3><div class="text-sm display font-bold text-navy mt-2">S$25</div></div></a><a href="adulting.html" class="group bg-white border border-line rounded-xl overflow-hidden hover:shadow-md hover:-translate-y-0.5 transition-all"><div class="aspect-[4/5] bg-cream/40 overflow-hidden"><img src="/shop-mockup-assets/adulting.png" alt="" class="w-full h-full object-cover" /></div><div class="p-4"><div class="text-[10px] heading uppercase tracking-widest text-mute">eBook</div><h3 class="display text-base font-semibold text-navy mt-1 leading-tight">The Ultimate Guide to Adulting</h3><div class="text-sm display font-bold text-navy mt-2">S$19</div></div></a><a href="money-management.html" class="group bg-white border border-line rounded-xl overflow-hidden hover:shadow-md hover:-translate-y-0.5 transition-all"><div class="aspect-[4/5] bg-cream/40 overflow-hidden"><img src="/shop-mockup-assets/money-management.webp" alt="" class="w-full h-full object-cover" /></div><div class="p-4"><div class="text-[10px] heading uppercase tracking-widest text-mute">eBook</div><h3 class="display text-base font-semibold text-navy mt-1 leading-tight">9 Money Management Rules You Should Know</h3><div class="text-sm display font-bold text-navy mt-2">S$17</div></div></a></div></section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-line/60 mt-10 py-8 text-center text-xs text-mute">
+    <div class="max-w-6xl mx-auto px-5">
+      © Leo Tan Financial · <a href="/index.html" class="hover:text-navy">Shop home</a>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,332 @@
+{
+  "financial-planning": {
+    "title": "The Ultimate Guide to Financial Planning",
+    "category": "eBook",
+    "price": "S$25",
+    "image": "../shop-mockup-assets/financial-planning.webp",
+    "image_aspect": "3/4",
+    "tagline": "Stop drifting through your money. Get the framework, the math, and the one-page plan.",
+    "what_inside": [
+      "The 5-bucket framework — emergency fund, fixed costs, lifestyle, investing, goals",
+      "How to set realistic Singapore-context savings rates by life stage",
+      "CPF, SRS, and tax relief moves you can do this week",
+      "Insurance gap math — what to keep, what to drop, what's missing",
+      "A one-page plan template (PDF + editable)"
+    ],
+    "how_to_use": [
+      "Download the PDF after checkout — link arrives within 30 seconds.",
+      "Read the 5-bucket framework chapter (15 minutes).",
+      "Open the one-page plan template, fill in your numbers.",
+      "Re-read the chapter that maps to your weakest bucket."
+    ],
+    "who_for": "You earn well but every month you wonder where it went. You've started 6 spreadsheets and finished none. You want a single framework, not 40 finance influencers.",
+    "deeper": "Pair this with the Personal Finance Workbook (Excel + Sheets) — same framework, fully wired up with formulas. Find it in the shop.",
+    "rating": "4.8",
+    "buyers": "1,124"
+  },
+  "adulting": {
+    "title": "The Ultimate Guide to Adulting",
+    "category": "eBook",
+    "price": "S$19",
+    "image": "../shop-mockup-assets/adulting.png",
+    "image_aspect": "3/4",
+    "tagline": "Renting, repaying, insuring, investing — your first 5 years out of school, decoded.",
+    "what_inside": [
+      "First-job cash flow — how to split your salary 4 ways from day one",
+      "Renting in Singapore — HDB, condo, co-living, deposit traps",
+      "PIP, PTI, Income Tax, CPF — the 4 letters that move your paycheck",
+      "Student-loan paydown vs invest — the actual math",
+      "Health insurance and IPs — what to buy at 24, what to add at 30"
+    ],
+    "how_to_use": [
+      "Read the cash-flow chapter first (Chapter 2).",
+      "Use the renting checklist before signing any tenancy agreement.",
+      "Re-read the insurance chapter when your Mum asks why you don't have a policy yet."
+    ],
+    "who_for": "20s, in your first or second job, money feels like a moving target, and your parents keep asking when you're going to 'plan properly.'",
+    "deeper": "If your situation is more complex — joint finances, a property, kids on the way — start with The Ultimate Guide to Financial Planning instead.",
+    "rating": "4.9",
+    "buyers": "892"
+  },
+  "money-management": {
+    "title": "9 Money Management Rules You Should Know",
+    "category": "eBook",
+    "price": "S$17",
+    "image": "../shop-mockup-assets/money-management.webp",
+    "image_aspect": "3/4",
+    "tagline": "Nine rules. No fluff. The ones that actually move the needle in Singapore.",
+    "what_inside": [
+      "Rule 1: Pay yourself first — and the 24-hour rule for raises",
+      "Rule 2: The 30-day buffer that ends paycheck-to-paycheck",
+      "Rule 3: Lifestyle inflation — the silent salary thief",
+      "Rule 4: Net worth > income (and why most high earners get this wrong)",
+      "Rules 5-9: Insurance, investing, tax, kids, retirement",
+      "9 worksheets — one per rule"
+    ],
+    "how_to_use": [
+      "Read one rule per night. Don't binge.",
+      "Do the worksheet before moving to the next rule.",
+      "Revisit rule 3 (lifestyle inflation) every time you get a raise."
+    ],
+    "who_for": "You make decent money but your savings rate hasn't moved in 3 years. You want short, principle-based reading — not yet another 300-page personal finance book.",
+    "deeper": "Combine with the Personal Finance Workbook to track your progress against each rule.",
+    "rating": "4.9",
+    "buyers": "1,486"
+  },
+  "wedding-playbook": {
+    "title": "The Wedding Playbook",
+    "category": "eBook",
+    "price": "S$22",
+    "image": "../shop-mockup-assets/wedding-playbook.webp",
+    "image_aspect": "3/4",
+    "tagline": "Plan a wedding without ending the marriage before it starts.",
+    "what_inside": [
+      "The S$30K, S$50K, S$80K wedding — three real Singapore budget templates",
+      "Hotel vs restaurant vs solemnisation-only — true cost breakdown",
+      "Pre-wedding shoot, gowns, ang pao expectations — the unspoken numbers",
+      "Joint accounts and money talks — the 6 conversations to have BEFORE the proposal",
+      "BTO, resale, condo — couple housing math from a financial-planning lens"
+    ],
+    "how_to_use": [
+      "Both partners read it — separately. No skimming.",
+      "Fill out the budget template together over a 2-hour Sunday session.",
+      "Run the housing math BEFORE the venue deposit, not after."
+    ],
+    "who_for": "Engaged or seriously dating. You love them, you want to do this right, and you want to talk about money without it becoming the thing you fight about.",
+    "deeper": "The 1:1 Financial Simulation is gold for couples — we run both of your numbers together in the Bee Hive Hub.",
+    "rating": "5.0",
+    "buyers": "342"
+  },
+  "retirement": {
+    "title": "Are You Truly Ready for Retirement?",
+    "category": "eBook",
+    "price": "S$23",
+    "image": "../shop-mockup-assets/retirement.webp",
+    "image_aspect": "3/4",
+    "tagline": "CPF Life isn't a retirement plan. Here's what the rest of it looks like.",
+    "what_inside": [
+      "The 4-bucket retirement income map — CPF Life, dividends, drawdown, passive",
+      "How to translate net worth into monthly retirement income",
+      "The medical inflation gap — and how to close it",
+      "When to retire, when to coast, when to keep going",
+      "A 5-year pre-retirement checklist (the unsexy stuff that matters)"
+    ],
+    "how_to_use": [
+      "Run the 4-bucket worksheet first — that's the diagnostic.",
+      "If any bucket is < 20% of target, that's your next 5-year project.",
+      "Review annually. Retirement readiness shifts faster than people expect."
+    ],
+    "who_for": "45-60, kids mostly through school, paying off the last of the mortgage, and starting to wonder if 'enough' is actually enough.",
+    "deeper": "The 1:1 Financial Simulation models your exact case in the Bee Hive Finance Hub — including CPF Life, draw-down years, and shortfall.",
+    "rating": "4.9",
+    "buyers": "768"
+  },
+  "investing": {
+    "title": "The Ultimate Guide to Investing in Singapore",
+    "category": "eBook",
+    "price": "S$19",
+    "image": "../shop-mockup-assets/investing-cover.png",
+    "image_aspect": "3/4",
+    "tagline": "Build your first $100K with ETFs, REITs, and SG-listed stocks. The framework, the mistakes, and the math.",
+    "what_inside": [
+      "The 'core + satellite' SGD/USD portfolio for working Singaporeans",
+      "S&P 500 vs STI — when each one wins, with 30-year backtests",
+      "REITs explained — yield traps, gearing, what to actually own",
+      "Robo-advisors, brokers, and direct ETFs — what to pick for your size",
+      "The behavioural mistakes that cost more than fees"
+    ],
+    "how_to_use": [
+      "Read it cover to cover before you open your first brokerage account.",
+      "Build the simplest version of the core portfolio first.",
+      "Re-read the behavioural chapter every time the market drops 10%."
+    ],
+    "who_for": "First-time investor or a few years in but realising the TikTok 'tips' aren't getting you anywhere. You want a long-game framework, not a hot pick.",
+    "deeper": "The Personal Finance Workbook has a built-in portfolio tracker. Pair them.",
+    "rating": "4.9",
+    "buyers": "247"
+  },
+  "budget-tracker": {
+    "title": "Budget Tracker",
+    "category": "Web App",
+    "price": "S$15",
+    "image": "../shop-mockup-assets/budget-tracker.webp",
+    "image_aspect": "9/19.5",
+    "tagline": "Mobile-first expense tracker with smart receipt scanning, categories, and a weekly review screen.",
+    "what_inside": [
+      "Smart AI add — type 'lunch 12.80' and it parses category + amount",
+      "4 budget categories: Fixed, Variable, Investments, Savings",
+      "Live progress bars so you know exactly where you stand",
+      "Monthly history to spot your spending patterns",
+      "Export to CSV to drop your data into Excel or Google Sheets",
+      "Works on any device — desktop, laptop, phone",
+      "Your data stays private — stored locally in your browser"
+    ],
+    "how_to_use": [
+      "Click 'Unlock' and complete checkout (30 seconds).",
+      "Open the app on your phone — add it to home screen for the app feel.",
+      "Add transactions as they happen, or batch on Sundays.",
+      "Run the weekly review every Sunday night."
+    ],
+    "who_for": "You earn well but never quite know where it all goes. You've tried 4 budgeting apps but lose patience after 2 weeks. You want something clean, private, and actually useful.",
+    "deeper": "The Personal Finance Workbook (Excel + Sheets) is the deeper version — full annual planning, net worth tracking, retirement projection.",
+    "rating": "4.9",
+    "buyers": "274 unlocks"
+  },
+  "personal-finance-workbook": {
+    "title": "Personal Finance Workbook",
+    "category": "Excel + Sheets",
+    "price": "S$19",
+    "image": "../shop-mockup-assets/personal-finance-workbook.webp",
+    "image_aspect": "16/10",
+    "tagline": "A 12-tab Excel + Google Sheets workbook. Plug your numbers in, get the full picture out.",
+    "what_inside": [
+      "Income, expenses, net worth — all linked, all auto-calculated",
+      "12 monthly tabs + a year-end roll-up dashboard",
+      "Retirement projection with editable inflation + return assumptions",
+      "Category budgeting with traffic-light status",
+      "CPF, SRS, and tax relief planner",
+      "Investment tracker — units, costs, current values, IRR",
+      "Works in both Excel (offline) and Google Sheets (collaborative)"
+    ],
+    "how_to_use": [
+      "Download both formats — pick the one that suits your workflow.",
+      "Plug in your last 3 months of transactions.",
+      "Set your savings rate target — the dashboard tells you if you're on track.",
+      "Review and update on the first Sunday of every month."
+    ],
+    "who_for": "You like spreadsheets. You want to OWN your data, not give it to another app. You want the full annual financial picture in one file.",
+    "deeper": "Pair with the Budget Tracker for daily input + the Workbook for monthly review.",
+    "rating": "4.9",
+    "buyers": "318 unlocks"
+  },
+  "hdb-mortgage-calculator": {
+    "title": "HDB Mortgage Calculator",
+    "category": "Web App",
+    "price": "S$12",
+    "image": null,
+    "image_aspect": "4/5",
+    "tagline": "Loan eligibility, monthly repayment, total interest. Every HDB and bank loan scenario in seconds.",
+    "what_inside": [
+      "TDSR + MSR eligibility checker (auto-applies the latest MAS limits)",
+      "HDB loan vs bank loan side-by-side",
+      "Monthly repayment, total interest, payoff schedule",
+      "Cash + CPF mix optimiser",
+      "Sensitivity sliders — what if rates go up 1%? 2%?"
+    ],
+    "how_to_use": [
+      "Unlock and open in any browser (no login).",
+      "Punch in flat price, downpayment, tenure, rate.",
+      "Compare HDB vs bank in the side-by-side view.",
+      "Save scenarios as PDF to share with your spouse or banker."
+    ],
+    "who_for": "First-time HDB buyer, or upgrader, who wants to know the actual numbers before falling in love with a unit.",
+    "deeper": "The 1:1 Financial Simulation runs your housing decision against the rest of your roadmap — CPF, retirement, kids' education.",
+    "rating": "4.9",
+    "buyers": "412 unlocks"
+  },
+  "policy-lens": {
+    "title": "PolicyLens",
+    "category": "AI Tool",
+    "price": "S$25",
+    "image": "../shop-mockup-assets/policy-lens.webp",
+    "image_aspect": "16/10",
+    "tagline": "Drop your insurance policy PDF in. Get a plain-English breakdown of what's covered, what's not, and what's questionable.",
+    "what_inside": [
+      "Upload any Singapore insurance policy PDF — life, CI, IP, health, term",
+      "Plain-English summary of coverage, exclusions, and waiting periods",
+      "Premium breakdown with future projection",
+      "Red-flag checker — common policy traps",
+      "Export the report as PDF to share with your spouse"
+    ],
+    "how_to_use": [
+      "Unlock, upload your policy PDF.",
+      "Read the AI summary — usually 60-90 seconds to generate.",
+      "Use the questions list when you call your existing agent."
+    ],
+    "who_for": "You have an insurance policy but you've never actually read it. You want to know what's actually in there — without booking another meeting with the agent who sold it to you.",
+    "deeper": "The 1:1 Financial Simulation reviews your full insurance portfolio against your needs (not against an agent's commission).",
+    "rating": "4.9",
+    "buyers": "189 unlocks"
+  },
+  "1-1-session": {
+    "title": "1:1 Financial Simulation",
+    "category": "1:1 Session",
+    "price": "S$80",
+    "image": "../shop-mockup-assets/bee-hive.webp",
+    "image_aspect": "16/10",
+    "tagline": "60 minutes. Your real numbers. The Bee Hive Finance Hub. We walk through your actual roadmap.",
+    "what_inside": [
+      "60-minute Zoom — pre-call form to gather your numbers",
+      "Cash flow + net worth review",
+      "CPF Life projection with retirement age scenarios",
+      "HDB / mortgage affordability check",
+      "Insurance gap analysis",
+      "Investment portfolio sanity check",
+      "Written follow-up summary within 48 hours"
+    ],
+    "how_to_use": [
+      "Book via the Calendly link — pick any 30-min slot.",
+      "Fill out the pre-call form (10 mins, asynchronous).",
+      "Show up to Zoom. We co-drive the Bee Hive Finance Hub on screen.",
+      "You leave with your roadmap, not a sales pitch."
+    ],
+    "who_for": "You've read the books, opened 3 spreadsheets, and you still want a second pair of eyes on your situation. No insurance pitch, no recurring fee, no upsell.",
+    "deeper": "If you want a structured ongoing engagement (quarterly reviews, model rebuilds), I can scope that separately — just ask at the end of the session.",
+    "rating": "5.0",
+    "buyers": "47 sessions"
+  },
+  "moneybees-finternship": {
+    "title": "MoneyBees Finternship Community",
+    "category": "Community",
+    "price": "Free",
+    "compare_at_price": "S$49/mo",
+    "image": "../shop-mockup-assets/skool-community.webp",
+    "image_aspect": "16/10",
+    "tagline": "6-module Skool community. Live Q&A, peer cohort, weekly drops. Free for now.",
+    "what_inside": [
+      "Module 1 — Onboarding Fast Start",
+      "Module 2 — Financial Planning Basics",
+      "Module 3 — Advisory Fundamentals",
+      "Module 4 — 9-Hour Investing Course",
+      "Module 5 — Growth & Relationships",
+      "Module 6 — Investment & Wealth Building",
+      "Live Q&A every fortnight. Peer cohort discussion threads. Weekly drops on what's happening in SG markets."
+    ],
+    "how_to_use": [
+      "Click join — you'll be redirected to the Skool community.",
+      "Complete Module 1 in your first week.",
+      "Show up to the next live Q&A — questions get priority.",
+      "Bring your wins and losses to the cohort thread weekly."
+    ],
+    "who_for": "You want to learn around peers, not alone. You like a cohort feel without the cohort-program price tag.",
+    "deeper": "If you want personalised attention, the 1:1 Financial Simulation is the right next step.",
+    "rating": "4.9",
+    "buyers": "1,200+ members"
+  },
+  "complete-ebook-bundle": {
+    "title": "The Complete eBook Bundle",
+    "category": "Bundle",
+    "price": "S$89",
+    "compare_at_price": "S$125",
+    "image": null,
+    "image_aspect": "1/1",
+    "tagline": "All six eBooks. One download. S$36 cheaper than buying separately.",
+    "what_inside": [
+      "The Ultimate Guide to Financial Planning",
+      "The Ultimate Guide to Adulting",
+      "9 Money Management Rules You Should Know",
+      "The Wedding Playbook",
+      "Are You Truly Ready for Retirement?",
+      "The Ultimate Guide to Investing in Singapore"
+    ],
+    "how_to_use": [
+      "One zip file. Six PDFs.",
+      "Read them in any order — start with the one closest to your current life stage.",
+      "Free updates for life — re-download anytime."
+    ],
+    "who_for": "You'd rather read 6 short focused books than 1 generic 400-pager. You want the framework for every life stage in one go.",
+    "deeper": "The 1:1 Financial Simulation is the natural next step once you've finished the Investing and Retirement chapters.",
+    "rating": "4.9",
+    "buyers": "514 bundles"
+  }
+}
