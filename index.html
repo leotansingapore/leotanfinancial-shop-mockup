@@ -42,6 +42,70 @@
     .cover-grad-7 { background: linear-gradient(135deg, #082B45 0%, #1f6fa8 100%); }
     .grain { background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px); background-size: 3px 3px; }
     [data-cat-hidden="true"] { display: none; }
+
+    /* === Bundle fan stack === */
+    .bundle-fan-stage {
+      position: relative;
+      width: 90%;
+      aspect-ratio: 1 / 1;
+    }
+    .bundle-book {
+      position: absolute;
+      left: 50%;
+      bottom: 6%;
+      width: 44%;
+      aspect-ratio: 3 / 4;
+      margin-left: -22%;
+      transform-origin: 50% 118%;
+      filter: drop-shadow(0 18px 26px rgba(0, 0, 0, 0.55));
+      transition: transform 0.5s cubic-bezier(.2,.7,.2,1);
+    }
+    .bundle-book img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center bottom;
+    }
+    .bundle-fan .book-1 { transform: rotate(-32deg); z-index: 1; }
+    .bundle-fan .book-2 { transform: rotate(-19deg); z-index: 2; }
+    .bundle-fan .book-3 { transform: rotate(-6deg);  z-index: 3; }
+    .bundle-fan .book-4 { transform: rotate(6deg);   z-index: 3; }
+    .bundle-fan .book-5 { transform: rotate(19deg);  z-index: 2; }
+    .bundle-fan .book-6 { transform: rotate(32deg);  z-index: 1; }
+    .group:hover .bundle-fan .book-1 { transform: rotate(-37deg) translateY(-4px); }
+    .group:hover .bundle-fan .book-2 { transform: rotate(-22deg) translateY(-4px); }
+    .group:hover .bundle-fan .book-3 { transform: rotate(-7deg)  translateY(-6px); }
+    .group:hover .bundle-fan .book-4 { transform: rotate(7deg)   translateY(-6px); }
+    .group:hover .bundle-fan .book-5 { transform: rotate(22deg)  translateY(-4px); }
+    .group:hover .bundle-fan .book-6 { transform: rotate(37deg)  translateY(-4px); }
+
+    /* Mini "Investing" cover (no flat asset exists) */
+    .ic-cover {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      background: #ffffff;
+      border-radius: 2px;
+      overflow: hidden;
+      container-type: inline-size;
+      padding: 9% 8% 8%;
+      box-shadow: inset -3px 0 6px rgba(0,0,0,0.08);
+    }
+    .ic-eyebrow { display: block; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 5cqw; color: #1a1f2e; font-weight: 500; line-height: 1; }
+    .ic-stack   { display: block; font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; line-height: 0.9; margin-top: 8%; }
+    .ic-stack span { display: block; }
+    .ic-orange  { color: #F68A1E; font-size: 19cqw; letter-spacing: -0.02em; }
+    .ic-mid     { color: #F68A1E; font-size: 11cqw; letter-spacing: -0.01em; }
+    .ic-navy    { color: #0B3D61; font-size: 19cqw; letter-spacing: -0.02em; }
+    .ic-author  { display: block; position: absolute; left: 8%; bottom: 9%; font-family: 'Plus Jakarta Sans', sans-serif; font-size: 5cqw; color: #1a1f2e; font-weight: 500; padding-left: 4cqw; border-left: 2px solid #0B3D61; line-height: 1.25; }
+    .ic-author b { display: block; color: #0B3D61; font-size: 6cqw; letter-spacing: 0.04em; font-weight: 700; }
+    .ic-author .by { color: #F68A1E; font-weight: 700; letter-spacing: 0.06em; }
+    .ic-dots {
+      position: absolute; top: 8%; right: 7%; width: 22%; height: 12%; opacity: 0.55;
+      background-image: radial-gradient(circle, #0B3D61 0.8px, transparent 0.8px);
+      background-size: 5cqw 5cqw;
+    }
     details > summary { list-style: none; cursor: pointer; }
     details > summary::-webkit-details-marker { display: none; }
     details[open] .chev { transform: rotate(180deg); }
@@ -203,7 +267,7 @@
     <div class="max-w-6xl mx-auto px-5 py-3 flex items-center justify-between gap-4 flex-wrap">
       <div class="flex items-center gap-1 p-1 bg-cream/60 rounded-lg" role="tablist">
         <button data-filter="all" class="filter-btn heading text-sm font-semibold px-4 py-2 rounded-md bg-white text-navy shadow-sm">All <span class="text-mute font-normal">13</span></button>
-        <button data-filter="ebook" class="filter-btn heading text-sm font-medium px-4 py-2 rounded-md text-mute hover:text-navy">eBooks <span class="text-mute/60 font-normal">6</span></button>
+        <button data-filter="ebook" class="filter-btn heading text-sm font-medium px-4 py-2 rounded-md text-mute hover:text-navy">eBooks <span class="text-mute/60 font-normal">7</span></button>
         <button data-filter="app" class="filter-btn heading text-sm font-medium px-4 py-2 rounded-md text-mute hover:text-navy">Apps <span class="text-mute/60 font-normal">4</span></button>
         <button data-filter="session" class="filter-btn heading text-sm font-medium px-4 py-2 rounded-md text-mute hover:text-navy">Sessions <span class="text-mute/60 font-normal">1</span></button>
         <button data-filter="community" class="filter-btn heading text-sm font-medium px-4 py-2 rounded-md text-mute hover:text-navy">Community <span class="text-mute/60 font-normal">1</span></button>
@@ -462,6 +526,58 @@
         </div>
       </article>
 
+      <!-- 7: Is Financial Advisory The Right Career For You? (FREE lead magnet) -->
+      <article data-category="ebook" class="group bg-white border border-line rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-0.5 transition-all" data-href="products/financial-advisory-career.html">
+        <div class="relative aspect-[4/5] overflow-hidden flex items-center justify-center p-5" style="background: radial-gradient(120% 80% at 70% 0%, #1f6fa8 0%, #0B3D61 50%, #082B45 100%);">
+          <!-- decorative orange accent -->
+          <div class="absolute -top-16 -right-16 w-56 h-56 rounded-full bg-orange/30 blur-3xl"></div>
+          <div class="absolute -bottom-20 -left-16 w-60 h-60 rounded-full bg-orange/15 blur-3xl"></div>
+          <!-- subtle dot grid -->
+          <div class="absolute inset-0 opacity-30" style="background-image: radial-gradient(rgba(255,255,255,0.18) 1px, transparent 1px); background-size: 14px 14px;"></div>
+
+          <!-- top badges -->
+          <div class="absolute top-3 left-3 right-3 z-20 flex justify-between items-start pointer-events-none">
+            <span class="text-[11px] heading font-bold uppercase tracking-wider bg-white/15 backdrop-blur border border-white/20 text-white px-2 py-1 rounded shadow-sm">Free guide</span>
+            <span class="text-[11px] heading font-semibold bg-emerald-500 text-white px-2 py-1 rounded shadow-sm">New</span>
+          </div>
+
+          <!-- book mockup -->
+          <div class="relative w-[68%] aspect-[3/4] rounded-[3px] overflow-hidden shadow-2xl" style="background: linear-gradient(160deg, #FEF3E2 0%, #ffffff 60%);">
+            <!-- left spine accent -->
+            <div class="absolute inset-y-0 left-0 w-[6%] bg-gradient-to-r from-orange to-orange-dark"></div>
+            <!-- top-right corner mark -->
+            <div class="absolute top-4 right-4 w-8 h-8 rounded-full bg-navy/10 flex items-center justify-center">
+              <span class="display text-navy font-bold text-sm">?</span>
+            </div>
+            <div class="relative h-full p-6 pl-8 flex flex-col">
+              <p class="heading text-[10px] font-semibold tracking-[0.18em] uppercase text-orange-dark">A career decision guide</p>
+              <h4 class="display text-[1.55rem] leading-[1.02] font-bold text-navy mt-3">
+                Is financial<br/>advisory<br/><span class="text-orange">the right</span><br/>career<br/>for you?
+              </h4>
+              <div class="mt-auto pt-4 border-t border-navy/15">
+                <p class="heading text-[10px] uppercase tracking-widest text-orange-dark font-bold">By</p>
+                <p class="display text-sm font-bold text-navy mt-0.5">Leo Tan, CFP</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="p-5">
+          <h3 class="display text-lg font-semibold text-navy">Is Financial Advisory the Right Career for You?</h3>
+          <p class="text-sm text-mute mt-1.5 leading-relaxed">Ten honest lessons before you sign — the franchise model, the math, the broken parts, and the four traits agencies actually look for.</p>
+          <div class="flex items-center gap-2 mt-3 text-xs text-mute heading">
+            <span class="flex items-center gap-1 text-amber-500">★★★★★</span>
+            <span>4.9 · 86 downloads</span>
+          </div>
+          <div class="flex items-center justify-between mt-5">
+            <span class="display text-2xl font-bold text-emerald-600">Free</span>
+            <a href="shop-mockup-assets/pdfs/financial-advisory-career.pdf" download class="heading text-sm font-semibold bg-navy hover:bg-navy-dark text-white px-4 py-2 rounded-md transition inline-flex items-center gap-1.5">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+              Download
+            </a>
+          </div>
+        </div>
+      </article>
+
       <!-- Budget Tracker App (live screenshot in phone frame) -->
       <article data-category="app" class="group bg-white border border-line rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-0.5 transition-all" data-href="products/budget-tracker.html">
         <div class="relative aspect-[4/5] bg-gradient-to-br from-orange-50 via-amber-50 to-rose-50 flex flex-col overflow-hidden">
@@ -587,7 +703,7 @@
         </div>
       </article>
 
-      <!-- PolicyLens (live screenshot in browser frame) -->
+      <!-- Policy Decoder (live screenshot in browser frame) -->
       <article data-category="app" class="group bg-white border border-line rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-0.5 transition-all" data-href="products/policy-lens.html">
         <div class="relative aspect-[4/5] flex flex-col text-white overflow-hidden" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #312e81 100%);">
           <div class="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-indigo-500/20 blur-3xl"></div>
@@ -611,14 +727,14 @@
                 <span class="w-2 h-2 rounded-full bg-rose-400"></span>
                 <span class="w-2 h-2 rounded-full bg-amber-400"></span>
                 <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-                <div class="flex-1 mx-2 bg-slate-900 rounded px-2 py-0.5 text-[8px] heading text-slate-400 truncate">policylens.app</div>
+                <div class="flex-1 mx-2 bg-slate-900 rounded px-2 py-0.5 text-[8px] heading text-slate-400 truncate">leotanfinancial.com/policy-decoder</div>
               </div>
-              <img src="shop-mockup-assets/policy-lens.webp" alt="PolicyLens — see through the fine print" class="w-full block" style="aspect-ratio: 16/10; object-fit: cover; object-position: top;" />
+              <img src="shop-mockup-assets/policy-lens.webp" alt="Policy Decoder — plain-English insurance policy reader" class="w-full block" style="aspect-ratio: 16/10; object-fit: cover; object-position: top;" />
             </div>
           </div>
         </div>
         <div class="p-5">
-          <h3 class="display text-lg font-semibold text-navy">PolicyLens</h3>
+          <h3 class="display text-lg font-semibold text-navy">Policy Decoder</h3>
           <p class="text-sm text-mute mt-1.5 leading-relaxed">Upload any insurance policy PDF — get a plain-English breakdown of coverage, exclusions, waiting periods, and red flags in 30 seconds.</p>
           <div class="flex items-center gap-2 mt-3 text-xs text-mute heading">
             <span class="flex items-center gap-1 text-amber-500">★★★★★</span>
@@ -673,7 +789,7 @@
         </div>
       </article>
 
-      <!-- MoneyBees Finternship — Skool community access -->
+      <!-- MoneyBees Skool Community — Skool community access -->
       <article data-category="community" class="group bg-white border border-line rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-0.5 transition-all" data-href="products/moneybees-finternship.html">
         <div class="relative aspect-[4/5] flex flex-col text-white overflow-hidden" style="background: linear-gradient(135deg, #b91c1c 0%, #dc2626 50%, #f59e0b 130%);">
           <div class="absolute inset-0 opacity-15" style="background-image: linear-gradient(rgba(255,255,255,0.18) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.18) 1px, transparent 1px); background-size: 22px 22px;"></div>
@@ -695,7 +811,7 @@
                 <span class="w-2 h-2 rounded-full bg-rose-400"></span>
                 <span class="w-2 h-2 rounded-full bg-amber-400"></span>
                 <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-                <div class="flex-1 mx-2 bg-white rounded px-2 py-0.5 text-[8px] heading text-slate-500 truncate">skool.com/moneybees-finternship/classroom</div>
+                <div class="flex-1 mx-2 bg-white rounded px-2 py-0.5 text-[8px] heading text-slate-500 truncate">skool.com/moneybees-skool/classroom</div>
               </div>
               <!-- 2x3 grid of curriculum tiles -->
               <div class="bg-slate-50 p-2 grid grid-cols-2 gap-1.5">
@@ -770,8 +886,8 @@
           </div>
         </div>
         <div class="p-5">
-          <h3 class="display text-lg font-semibold text-navy">MoneyBees Finternship Community</h3>
-          <p class="text-sm text-mute mt-1.5 leading-relaxed">6-module Skool community: Financial Planning Basics, Investing 1.0, Growth &amp; Relationships, Wealth Building, Strategy &amp; Offers, and Marketing &amp; Leads. Live Q&amp;A, peer cohort, weekly drops.</p>
+          <h3 class="display text-lg font-semibold text-navy">MoneyBees Skool Community</h3>
+          <p class="text-sm text-mute mt-1.5 leading-relaxed">A 6-module Skool group for people getting serious about money &mdash; or building a finance-adjacent career. Planning, investing, wealth building, plus growth, offers, and leads if you sell. Live Q&amp;A weekly.</p>
           <div class="flex items-center gap-2 mt-3 text-xs text-mute heading">
             <span class="flex items-center gap-1 text-amber-500">★★★★★</span>
             <span>4.9 · 1,200+ members</span>
@@ -788,12 +904,35 @@
 
       <!-- Bundle -->
       <article data-category="bundle" class="group bg-navy text-white border border-navy rounded-2xl overflow-hidden hover:shadow-xl hover:-translate-y-0.5 transition-all" data-href="products/complete-ebook-bundle.html">
-        <div class="relative aspect-[4/5] cover-grad-3 grain p-6 flex flex-col justify-between text-white">
-          <div class="flex justify-between items-start">
+        <div class="relative aspect-[4/5] cover-grad-3 grain p-6 flex flex-col justify-between text-white overflow-hidden">
+          <!-- Fanned stack of 6 ebook covers -->
+          <div class="bundle-fan absolute inset-x-0 top-0 flex items-start justify-center pointer-events-none pt-2" style="height: 70%;">
+            <div class="bundle-fan-stage">
+              <div class="bundle-book book-1"><img src="shop-mockup-assets/wedding-playbook.webp" alt="" /></div>
+              <div class="bundle-book book-2"><img src="shop-mockup-assets/retirement.webp" alt="" /></div>
+              <div class="bundle-book book-3"><img src="shop-mockup-assets/money-management.webp" alt="" /></div>
+              <div class="bundle-book book-4"><img src="shop-mockup-assets/adulting.png" alt="" /></div>
+              <div class="bundle-book book-5"><img src="shop-mockup-assets/financial-planning.webp" alt="" /></div>
+              <div class="bundle-book book-6">
+                <div class="ic-cover">
+                  <span class="ic-dots"></span>
+                  <span class="ic-eyebrow">The ultimate guide.</span>
+                  <span class="ic-stack">
+                    <span class="ic-orange">INVESTING</span>
+                    <span class="ic-mid">IN</span>
+                    <span class="ic-navy">SINGAPORE</span>
+                  </span>
+                  <span class="ic-author"><span class="by">BY</span><b>LEO TAN, CFP</b></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Foreground content -->
+          <div class="relative z-10 flex justify-between items-start">
             <span class="text-[11px] heading font-bold uppercase tracking-wider bg-white/15 backdrop-blur px-2 py-1 rounded">Bundle</span>
             <span class="text-[11px] heading font-semibold bg-orange px-2 py-1 rounded">Save 29%</span>
           </div>
-          <div>
+          <div class="relative z-10">
             <p class="text-xs heading uppercase tracking-widest text-white/80">6 eBooks</p>
             <h3 class="display text-2xl font-bold leading-tight mt-1">Complete eBook Bundle</h3>
             <p class="text-xs text-white/80 mt-2">Financial Planning · Adulting · Money Management · Wedding · Retirement · Investing</p>

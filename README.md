@@ -27,7 +27,7 @@ Single-file HTML + Tailwind via CDN. No bundler, no framework. Open the file or 
 | 7 | Budget Tracker | App (Excel + Notion) | 15 | UI mock |
 | 8 | HDB Mortgage Calculator | Pay-to-unlock app | 12 | UI mock |
 | 9 | CPF Life Estimator | Pay-to-unlock app | 12 | UI mock |
-| 10 | PolicyLens | AI tool · pay-to-unlock | 19 | UI mock |
+| 10 | Policy Decoder | AI tool · pay-to-unlock | 19 | UI mock |
 | 11 | 1:1 Bee Hive Finance Hub Walkthrough | Session | 80 | UI mock |
 | 12 | Complete eBook Bundle (all 6) | Bundle | 89 (was 125, save 29%) | — |
 

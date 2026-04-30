@@ -225,7 +225,7 @@
     "buyers": "412 unlocks"
   },
   "policy-lens": {
-    "title": "PolicyLens",
+    "title": "Policy Decoder",
     "category": "AI Tool",
     "price": "S$25",
     "image": "../shop-mockup-assets/policy-lens.webp",
@@ -276,7 +276,7 @@
     "buyers": "47 sessions"
   },
   "moneybees-finternship": {
-    "title": "MoneyBees Finternship Community",
+    "title": "MoneyBees Skool Community",
     "category": "Community",
     "price": "Free",
     "compare_at_price": "S$49/mo",
